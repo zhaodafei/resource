@@ -1,0 +1,65 @@
+version: "2"
+
+services:
+    # nginx
+    nginx:
+        image: nginx:alpine
+        ports:
+            - "80:80"
+        volumes:
+            # app
+#            - ./www:/usr/share/nginx/html
+            # nginx配置
+            - /data/server/package/nginx/nginx.conf:/etc/nginx/nginx.conf:rw
+            - /data/server/package/nginx/conf.d/:/etc/nginx/conf.d/:rw
+        volumes_from:
+           - www
+        links:
+            - php-fpm:fpm
+        environment:
+            SERVER_START: 'true'
+
+    # php
+    php-fpm:
+        build:
+            context: /data/server/package/data/server/package/php-fpm # 自定义PHP镜像的配置目录
+            dockerfile: Dockerfile
+        expose:
+            - "9000" # 暴露端口，不映射到主机
+        volumes:
+            # - ./www:/usr/share/nginx/html
+            # 配置php.ini
+            - /data/server/package/php-fpm/conf/php.ini:/usr/local/etc/php/conf.d/php.ini
+        privileged: true
+        volumes_from:
+           - www
+        links:
+            - mysql:mysql
+            # - redis:redis
+        
+    # mysql
+    mysql: # 容器名称
+        image: mysql:5.7
+        ports:
+            - "3306:3306" # 端口映射，主机端口:容器对外端口
+        volumes:
+            - /data/server/package/mysql:/var/lib/mysql:rw # 数据卷，mysql数据就存放在这里
+        privileged: true
+        environment:
+            TZ: 'Asia/Shanghai'
+#            MYSQL_DATABASE: macken
+#            MYSQL_USER: homestead
+#            MYSQL_PASSWORD: 123456
+            MYSQL_ROOT_PASSWORD: root 
+             
+    # Redis
+    redis:
+        image: redis
+        ports:
+            - "6379:6379"
+          
+    # 代码目录
+    www:
+        image: tianon/true
+        volumes:
+            - /data/server/package/www/:/var/www/html/:rw

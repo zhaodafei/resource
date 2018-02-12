@@ -1,0 +1,46 @@
+version: "2"
+
+services:
+    # apache
+    php-apache:
+        build:
+            context: ./php-apache
+            dockerfile: Dockerfile
+        ports:
+            - "80:80"
+        privileged: true
+        volumes:
+            # code
+            - ./www/:/var/www/html/:rw
+            # 虚拟主机配置
+            - ./php-apache/vhosts/:/etc/apache2/sites-enabled/
+            # apache配置
+            - ./php-apache/apache2.conf:/etc/apache2/apache2.conf
+            # php配置
+            - ./php-apache/php.ini:/usr/local/etc/php/php.ini
+        links:
+            - mysql:mysql
+        
+    # mysql
+    mysql: # php里连接数据库的host参数
+        image: mysql:5.5.41
+        ports:
+            - "3306:3306"
+        volumes:
+            # 数据存储目录
+            - ./mysql/data:/var/lib/mysql:rw
+            # mysql配置
+            # - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf # 未生效
+            # - ./mysql/log:/var/log/mysql
+            # - ./my.cnf:/etc/mysql/my.cnf
+        # restart: always
+        privileged: true
+        # command: ['mysqld', '--character-set-server=utf8']
+        environment:
+            # TZ: 'Asia/Shanghai'
+            MYSQL_ROOT_PASSWORD: root
+            # MYSQL_USER: admin
+            # MYSQL_PASSWORD: 1234
+            # MYSQL_DATABASE: database
+
+             
