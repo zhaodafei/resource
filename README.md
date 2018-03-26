@@ -25,3 +25,5 @@
 [typora 官网](https://typora.io/)
 
 [Free Download Manager 官网](https://www.freedownloadmanager.org/)
+
+[Redis Desktop Manager 官网](https://redisdesktop.com/)
