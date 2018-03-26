@@ -21,3 +21,7 @@
 [jd-gui 反编译java 文件](http://jd.benow.ca/)
 
 [postman 官网](https://www.getpostman.com/)
+
+[typora 官网](https://typora.io/)
+
+[Free Download Manager 官网](https://www.freedownloadmanager.org/)
