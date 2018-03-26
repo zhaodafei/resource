@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>Simple Map</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<style>
+			html,
+			body {
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			#map1,#map2 {
+				height: 50%;
+			}
+
+
+			.windowBody button {
+				display: inline-block;
+				width: 49%;
+				border: none;
+				background: #fff;
+				height: 26px;
+				border: 1px solid #efefef;
+			}
+		</style>
+		<!--<link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">-->
+	</head>
+
+	<body>
+		<div>
+			<label>保存位置</label>
+			<input type="text" name="add" id="address" value="" />
+			<input type="hidden" name="" id="lat">
+			<input type="hidden" name="" id="lng">
+			<input type="hidden" name="" id="lat_tmp" value="38.28539">
+			<input type="hidden" name="" id="lng_tmp" value="109.73458900000003">
+			<input type="hidden" name="" id="address_tmp" value="中国陕西省榆林市榆阳区青山东路">
+
+
+			<label>位置</label>
+			<input type="text" name="" id="search_input" value="" />
+			<input type="button" id="search_btn" value="搜索" />
+		</div>
+		<div id="map1" name="map-body"></div>
+
+		<div>
+			<label>保存位置</label>
+			<input type="text" name="add" id="address2" value="" />
+			<input type="hidden" name="" id="lat2">
+			<input type="hidden" name="" id="lng2">
+			<input type="hidden" name="" id="lat_tmp2">
+			<input type="hidden" name="" id="lng_tmp2">
+			<input type="hidden" name="" id="address_tmp2">
+
+
+			<label>位置</label>
+			<input type="text" name="" id="search_input2" value="" />
+			<input type="button" id="search_btn2" value="搜索" />
+		</div>
+		<div id="map2" name="map-body"></div>
+
+
+
+
+
+
+
+
+		<script src="http://we.taagoo.com/js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+		//第一个参数为参数，mapObj为实例化后的对象
+		function getGoogleSelectMapObj(params,mapObj){
+			if(!mapObj){
+				var selectMapObj={
+					mapBoxId:(undefined!=params.mapBoxId?params.mapBoxId:'map1'),//显示map的id
+					searchBtn:undefined!=params.searchBtn?params.searchBtn:'#search_btn',//搜索按钮
+					searchInput:$(undefined!=params.searchInput?params.searchInput:'#search_input'),//搜索输入input
+
+
+					lat:$(undefined!=params.lat?params.lat:'#lat'),
+					lng:$(undefined!=params.lng?params.lng:'#lng'),
+					address:$(undefined!=params.address?params.address:'#address'),//保存汉字的input
+					lat_tmp:$(undefined!=params.lat_tmp?params.lat_tmp:'#lat_tmp'),
+					lng_tmp:$(undefined!=params.lng_tmp?params.lng_tmp:'#lng_tmp'),
+					address_tmp:$(undefined!=params.address_tmp?params.address_tmp:'#address_tmp'),
+					myLatlng:undefined!=params.myLatlng?params.myLatlng:{},
+					map:null,
+					markers:[],
+					geocoder:null,
+
+					infowindow:null,
+					init:function(){
+						if(!selectMapObj.myLatlng.lng || !selectMapObj.myLatlng.lat){
+							selectMapObj.myLatlng={
+								lat:selectMapObj.lat_tmp.val()?parseFloat(selectMapObj.lat_tmp.val()):39.908,
+								lng:selectMapObj.lng_tmp.val()?parseFloat(selectMapObj.lng_tmp.val()):116.397,
+							}
+						}
+
+						selectMapObj.geocoder = new google.maps.Geocoder;
+						selectMapObj.map=new google.maps.Map(document.getElementById(selectMapObj.mapBoxId), {
+							center: selectMapObj.myLatlng,
+							zoom: 12
+						});
+						selectMapObj.map.addListener('click', function(e) {
+							selectMapObj.geocodeLatLng(selectMapObj.geocoder, selectMapObj.map, e.latLng,selectMapObj.markers,selectMapObj.address)
+						});
+						selectMapObj.geocodeLatLng(selectMapObj.geocoder, selectMapObj.map,  selectMapObj.myLatlng,selectMapObj.markers,selectMapObj.address);
+					},
+					bindEvent:function() {
+						//选择地图
+						$('body').on('click','button.google_map_select_'+selectMapObj.mapBoxId,function(){
+							selectMapObj.lat.val(selectMapObj.lat_tmp.val());
+							selectMapObj.lng.val(selectMapObj.lng_tmp.val());
+							selectMapObj.address.val(selectMapObj.address_tmp.val());
+							selectMapObj.infowindow.close();
+						}).on('click','button.google_map_cancle_'+selectMapObj.mapBoxId,function(){
+							selectMapObj.infowindow.close();
+						}).on('click',selectMapObj.searchBtn,function(){
+							selectMapObj.geocoder.geocode({'address': selectMapObj.searchInput.val()}, function(results, status) {
+								if (status === google.maps.GeocoderStatus.OK) {
+									myLatlng=results[0].geometry.location;
+									var geocoder = new google.maps.Geocoder;
+									selectMapObj.infowindow = new google.maps.InfoWindow;
+									selectMapObj.geocodeLatLng(geocoder, selectMapObj.map,  myLatlng,selectMapObj.markers,selectMapObj.address);
+									selectMapObj.setMapOnAll();
+									var marker = new google.maps.Marker({
+										position: myLatlng,
+										map: selectMapObj.map,
+										title: addText
+									});
+									selectMapObj.markers.push(marker);
+									selectMapObj.infowindow.open(selectMapObj.map, marker);
+								} else {
+									alert('查询的地点名称不够具体 ' + status);
+								}
+							});
+						});
+					},
+					setMapOnAll:function() {
+						for(var i = 0; i < selectMapObj.markers.length; i++) {
+							selectMapObj.markers[i].setMap(null);
+						}
+					},
+					geocodeLatLng:function(geocoder, map, latLng,markers,address) {
+						geocoder.geocode({
+							'location': latLng
+						}, function(results, status) {
+							if(status === google.maps.GeocoderStatus.OK) {
+								if(results[0]) {
+									txt = results[0].formatted_address;
+									textN=txt.toString().indexOf('邮政编码');
+									if(textN<0){
+										addText=txt;
+									}else{
+										addText=txt.toString().substring(0,textN);
+									}
+									selectMapObj.lat_tmp.val(latLng.lat);
+									selectMapObj.lng_tmp.val(latLng.lng);
+									selectMapObj.address_tmp.val(addText);
+									var contentString = '<div class="windowBody"><p>' + addText + '</p><button  class="google_map_select_'+selectMapObj.mapBoxId+'">选择此点</button><button class="google_map_cancle_'+selectMapObj.mapBoxId+'">取消</button></div>';
+									selectMapObj.infowindow = new google.maps.InfoWindow({
+										content: contentString
+									});
+									selectMapObj.setMapOnAll(null,markers);
+									var marker = new google.maps.Marker({
+										position: latLng,
+										map: map,
+										title: addText
+									});
+									markers.push(marker);
+									selectMapObj.infowindow.open(map, marker)
+									marker.addListener('click', function() {
+										selectMapObj.infowindow.open(map, marker);
+								    });
+								} else {
+									window.alert('没有查到相关信息');
+								}
+							} else {
+								window.alert('Geocoder failed due to: ' + status);
+							}
+						});
+					}
+				};
+				selectMapObj.init();
+				selectMapObj.bindEvent();
+				return selectMapObj;
+			}else{
+				mapObj.init();
+			}
+			return mapObj;
+		}
+
+		function initMap(){
+			alert("请自行配置个人key,这里的key仅供测试使用");
+
+			//调用多个地图
+			var firstMap;
+			getGoogleSelectMapObj({
+				mapBoxId:'map1',
+				address:'#address',
+				lat:'#lat',
+				lng:'#lng',
+				lat_tmp:'#lat_tmp',
+				lng_tmp:'#lng_tmp',
+				address_tmp:'#address_tmp',
+				searchBtn:'#search_btn',
+				searchInput:'#search_input',
+			},firstMap);
+
+
+			var firstMap2;
+			getGoogleSelectMapObj({
+				mapBoxId:'map2',
+				address:'#address2',
+				lat:'#lat2',
+				lng:'#lng2',
+				lat_tmp:'#lat_tmp2',
+				lng_tmp:'#lng_tmp2',
+				address_tmp:'#address_tmp2',
+				searchBtn:'#search_btn2',
+				searchInput:'#search_input2',
+			},firstMap2);
+		}
+		</script>
+		<!--<script src="http://ditu.google.cn/maps/api/js?v=3.exp&key=AIzaSyCyoFeXXRNPujufgiiO-SmTZMtqWu6T_V4&callback=initMap" async defer></script>-->
+		<script src="http://ditu.google.cn/maps/api/js?v=3.exp&key=配置你自己的key&callback=initMap" async defer></script>
+	</body>
+
+</html>
