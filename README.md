@@ -14,6 +14,8 @@
 
 [openoffice](http://www.openoffice.org/download/index.html) 可以打开office，.ods（ubuntu中文档格式）
 
+[libreoffice](https://www.libreoffice.org/ ) 可以打开office，.ods
+
 [mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/)
 
 [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via)
