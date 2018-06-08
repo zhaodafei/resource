@@ -1,0 +1,267 @@
+http://dev.dcloud.net.cn/mui/
+
+
+++++++++++++++++++++++
+npm run dev   运行VUE+
+++++++++++++++++++++++
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+https://blog.csdn.net/bright2017/article/details/74188320 (引入外部的JQ)+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+https://blog.csdn.net/shuaizi96/article/details/73611254  （引入高德地图）+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+++++++++++++++++++++++++++++++++++
+vue webpack  打包  npm run build +
+++++++++++++++++++++++++++++++++++
+
+
+打包好后  会报错 因为引入路径问题所以 需要该动有两个方法
+
+1、直接改动 build 文件包下webpack.base.conf.js文件中：
+ publicPath: process.env.NODE_ENV === 'production'
+      ? config.build.assetsPublicPath
+      : config.dev.assetsPublicPath
+
+改为   publicPath: './'
+
+2、改动config 文件包中   index.js 文件
+
+
+ // Paths
+    assetsRoot: path.resolve(__dirname, '../dist'),
+    assetsSubDirectory: 'static',
+    assetsPublicPath: '/',
+
+文件中的 assetsPuvlicPath: './'  (/改成 ./ 很重要)
+
++++++++++++++++
+vue title改变 +
++++++++++++++++
+
+1、npm install vue-wechat-title --save  （npm下）
+
+2、在 main.js 下 需要引入 import VueWechatTitle from 'vue-wechat-title'
+
+3、在main.js  下  需要注册 Vue.use(VueWechatTitle)
+
+4、在App.vue 下
+
+<router-view v-wechat-title='$route.meta.title'></router-view>
+
+5、router 文件包 index.js 下routes: [
+    {
+      path: '/',
+      name: 'HelloWorld',
+      component: HelloWorld,
+      meta: {
+        title: '勇敢'
+      }
+    }]
+
+mata title 就是title内容（勇敢）
+
+
+
+
++++++++++++++++++++++++++
+vue vue-awesome-swiper +
++++++++++++++++++++++++++
+
+类似于原生vue swiper 这个当请求发起后加载页面 无法买足需求（无法从第一个页面到最后一个页面滚动
+：原因是因为HTML加载好后JS没有重新加载引发的送引发的现象，不如直接引入JQ swiper 易操作）
+
+npm install swiper -g
+
+import $ from 'jquery'
+import Swiper from 'swiper'
+import 'swiper/dist/css/swiper.min.css'
+
+引入 相应的JS  和CSS 
+
+
+this.mySwiper = new Swiper('.swiper-container', {}）
+
+
+<template>
+  <div>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <!--<div class="swiper-slide">Slide 2</div>-->
+        <!--<div v-for="data in datas" v-bind:key="data.id" class="swiper-slide">{{ data }}</div>-->
+      </div>
+      <!-- 如果需要分页器 -->
+      <div class="swiper-pagination"></div>
+      <!-- 如果需要导航按钮 -->
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
+      <!-- 如果需要滚动条 -->
+      <div  class="swiper-scrollbar"></div>
+    </div>
+    <div @click="updata">11111111111111111111</div>
+    <div @click="upfun">222222222222222222</div>
+  </div>
+
+</template>
+
+
+引入HTML JS  后就像是JQ swiper 一样使用
+
+
++++++++++++++++++++++++++
+vue项目中引入高德地图   +
++++++++++++++++++++++++++
+
+1、html中引入
+<script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=你的API key"></script>
+<script src="//webapi.amap.com/ui/1.0/main.js"></script>
+
+2、build 文件包下  webpack.base.conf.js 最后添加
+
+ externals: {
+    "AMap": "AMap"
+  }
+
+3 在vue页面添加
+
+<template>
+    <div id="container" class="mymap"></div>
+</template>
+<script>
+
+import AMap from 'AMap';   //在页面中引入高德地图
+
+export default {
+    mounted(){
+       this.loadmap();     //加载地图和相关组件
+    },
+    methods: {
+      loadmap(){
+        const map = new AMap.Map('container', {
+          zoom: 9
+        });
+      }
+    }
+}
+</script>
+<style scoped>
+    .mymap{
+      
+    }
+</style>
+
+此时呈现出  地图
+
+++++++++++++++++++
+外部引入JS / css +
+++++++++++++++++++
+
+全局的情况下  在main.js下
+import './js/rem'
+import './css/base.css'
+
+++++++++++++++
+外部引入 js  +
+++++++++++++++
+
+vue 页面中写：
+import {realconsole} from '../assets/shiyong.js'
+
+
+shiyong.js  中写入
+
+
+function realconsole () {
+  alert('hello.thanks use me')
+}
+export {
+  realconsole
+}
+
+可直接调用JS 
+
+++++++++++++++++++++
+vuex  引入 +++
++++++++++++++++++++++
+
+1、npm install vuex --save
+
+2、前面为了方便 , 我们把 store 对象写在了 main.js 里面 , 但实际上为了便于日后的维护 ,
+ 我们分开写更好 , 我们在 src 目录下 , 新建一个 store 文件夹 , 然后在里面新建一个 index.js :
+import Vue from 'vue'
+import vuex from 'vuex'
+Vue.use(vuex);
+
+export default new vuex.Store({
+    state:{
+        show:false
+    }
+})
+
+
+3、main.js
+
+import store from './store'
+
+new Vue({
+  el: '#app',
+  router,
+  store,//使用store   =========添加这个
+  template: '<App/>',
+  components: { App }
+})
+
+用的时候 this.$store.state.show  就可以了
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+<link rel="shortcut icon" type="image/x-icon" href="./static/favicon.ico" rel="external nofollow" /> (添加ioc图片) +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+在index html 中添加link ico 实现;
+
+++++++++++++++++++++++++++++++
+npm i lrz （lrz 插件图片上传）+
+++++++++++++++++++++++++++++++
+
+1、npm i lrz
+
+2、在使用的vue页面下 import lrz from 'lrz'
+
+3、<input name="logo" type="file" accept="image/gif,image/jpeg,image/jpg,image/png,image/svg" @change="imgs">
+    <img class="aa" v-bind:src=imgstr  alt=""/>
+
+4、 imgs: function (e) {
+      this.files = e.target.files || e.dataTransfer.files
+      if (!this.files.length) return
+      console.log(this.files[0])
+      this.createImage(this.files, e)
+    },
+    createImage: function (file, e) {
+      console.log(file)
+      var thiss = this
+      lrz(file[0], { width: 100 }).then(function (result) {
+        console.log(result)
+        console.log(1111111111)
+        console.log(thiss.imgstr + '1111111')
+        thiss.imgstr = result.base64
+      })
+    }
+
+++++++++++++++++++++++
+element-ui (兼于vue) +
+++++++++++++++++++++++
+1、npm i element-ui -D
+
+2、在main.js中引入：
+   import ElementUI from 'element-ui';
+   import 'element-ui/lib/theme-default/index.css';
+   Vue.use(ElementUI);
+
+++++++++++++++++++++++++
+npm i mint-ui -D (兼容)+
+++++++++++++++++++++++++
+https://mint-ui.github.io/docs/#/zh-cn2/loadmore  文档
