@@ -16,8 +16,6 @@
 
 [libreoffice](https://www.libreoffice.org/ ) 可以打开office，.ods
 
-[mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/)
-
 [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via)
 
 [jd-gui 反编译java 文件](http://jd.benow.ca/)
@@ -29,3 +27,9 @@
 [Free Download Manager 官网](https://www.freedownloadmanager.org/)
 
 [Redis Desktop Manager 官网](https://redisdesktop.com/)
+
+
+
+[mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/)
+
+[mysql-workbench-community 一款数据库管理工具](https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi)
