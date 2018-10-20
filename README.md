@@ -1,4 +1,4 @@
-# resource
+# resource  
 
 [Xperia Z3+](http://bbs.gfan.com/forum.php?mod=viewthread&tid=9191328) 
 
