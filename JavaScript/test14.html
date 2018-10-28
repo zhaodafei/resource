@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>绑定事件的3种常用方式</title>
+    <script type="text/javascript">
+        /**
+         * 在这个过程中,a 标签绑定了 onclick 事件,
+         * 用句柄来描述就是 ---- a 标签的 onclick 句柄上,绑定了 t 函数
+         *
+         * 分析:
+         * 1; DOM 对象的句柄
+         * 2:句柄上绑定的函数
+         * 3:事件发生的哪一瞬间,关于事件的各种信息,如时间,如发生时鼠标在屏幕上的坐标,事件类型等等
+         *   这些信息,被打包成一个对象,便于我们获取 -----这个对象称为 "对象事件"
+         */
+    </script>
+</head>
+<body>
+    <a href="#" onclick="t();">hello world</a>
+
+    <!-- 绑定事件1 -->
+    <script type="text/javascript">
+        /**
+         *  第一种绑定事件的方式
+         *  即把事件写在标签的属性里
+         *  如: <a href="#" onclick="t();">
+         *
+         *  这是 DOM 0级的标准(非常古老的标准)
+         *
+         *  好处: 大家都会,几乎所有的浏览器都支持
+         *  坏处:
+         *      夹杂在HTml代码中,不简介,
+         *      这种时间绑定写法,效率不高
+         *      不符合"行为, 结构, 样式相分离"
+         */
+    </script>
+    <p> 这是一个  [行为,样式,结构] 不分的例子</p>
+    <p>
+        onclick 是行为
+        a 标签是结构
+        style 是样式
+    </p>
+    <a href="#" style="background:darkred;" onclick="alert('hello world');">行为 结构 样式</a>
+</body>
+</html>

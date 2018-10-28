@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链继承</title>
+    <script type="text/javascript">
+        /**
+         *  JS 没有类的概念,因此--
+         *  JS 的继承,不是通过类的继承来实现的
+         *
+         *  而是通过"原型"的概念来完成的
+         */
+        // 这个构造函数在制造对象
+        function Tiger() {
+            this.bark = function () {
+                console.log('我是百兽之王');
+            }
+        }
+
+        var hu = new Tiger();
+        /**
+         * 以 java 为例,应该让 tiger 继承 cat 类,但js中做不到
+         * 那,如何让老虎有猫的属性呢?
+         *
+         * --------照猫画虎
+         * 我们明确的对 "tiger" 指定,用某个具体的 "cat对象" 做老虎的原型,并创建"老虎对象"
+         */
+
+        function Cat() {
+            this.climb = function () {
+                console.log('我会爬树');
+            }
+        }
+
+        var bosi = new Cat();
+        // hu.bark();
+        // bosi.climb();
+        // hu.climb()  老虎 不会爬树
+        // console.log(bosi);
+        // console.log(Cat.prototype);  //空对象,显示为cat
+        // console.log(Cat.prototype.constructor);  //因为原型对象的construct指向cat,所以显示为cat
+        // console.log(Cat.prototype.__proto__); //空对象 Object
+        // console.log(Cat.prototype.__proto__.__proto__); // null
+
+
+        // 开始继承
+        Tiger.prototype = new Cat();
+        var huanahu = new Tiger();
+        huanahu.climb();
+        // huanahu.valueOf();
+        // console.log(hnhu);
+        /**
+         * 在这个过程中,发生了什么?
+         * 1:构造空对象 huanahu{}
+         * 2:huanahu.bark = function(){}
+         * 3:huanahu.__proto__ = tiger.prototype(即cat对象)  //这是继承的关键
+         *
+         * 就是说---js中,每个对象,都有一个__proto__ 指向原型对象
+         * 原型对象也是对象,也有__proto__
+         *
+         * ......原型的原型的原型..............
+         *
+         * 分析:
+         * 老虎是如何爬到数和valueOf的?
+         * 答: 老虎先在自身对象上寻找,没有爬树方法,valueOf方法
+         * 去寻找原型,原型 cat 对象上有次方法.
+         * 得以调用 climb() 方法
+         *
+         * 但 valueof() 方法扔没找到,
+         * 因此,继续沿着原型查找,
+         * 找到 cat 空对象,仍然没有valueof
+         * 再找,找到 Object 对象有 valueof 方法,调用成功
+         *
+         * 对象--->原型-->原型的原型--->Object对象--->null
+         * 这样的一条链----成为原型链
+         * 对象的属性和方法,就是沿着原型链来查找和调用的;
+         * 也就是 JS 中的原型继承
+         */
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>捕捉模型与冒泡模型</title>
+    <script type="text/javascript">
+
+    </script>
+    <style type="text/css">
+        #china {
+            width: 600px;
+            height: 600px;
+            border: 1px solid gray;
+        }
+
+        #bj,#hd {
+            width: 80%;
+            height: 80%;
+            margin: auto;
+        }
+
+        #bj{
+            border: 1px solid blue;
+        }
+
+        #hd{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+<div id="china">
+    china
+    <div id="bj">
+        beijing
+        <div id="hd">
+            haidian
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript">
+    /**
+     * 捕捉模型与冒泡模型
+     *
+     * 思路: 如果我在 "海淀" div 点击了一下
+     * 那么:
+     * ----在 W3C 标准中,同时支持者2中方式,分别称为
+     * 外--->内 , 称之为 "捕捉模型"
+     * 内--->外,  称之为 "冒泡模型"
+     *
+     * 总结:
+     * 1: 第三个参数 true/false  代表 捕捉/冒泡,如果不填,默认是false(建议勿忽略)
+     * 2: 系统会为事件函数,自动传入事件对象,作为第一个参数传入
+     * demo:
+     *     $('china').addEventListener('click', function (ev) {
+     *          console.log(ev)
+     *          alert('进入china');
+     *     }, true);
+     */
+    function $(id) {
+        return document.getElementById(id);
+    }
+
+    //捕捉模型
+    $('china').addEventListener('click', function () {
+        alert('进入china');
+    }, true);
+
+    $('bj').addEventListener('click', function (ev) {
+        alert('进入beijing');
+        ev.stopPropagation(); //事件停止传播与效果阻止
+    }, true);
+
+    $('hd').addEventListener('click', function () {
+        alert('进入haiding');
+    }, true);
+
+    // 冒泡模型
+    $('china').addEventListener('click', function () {
+        alert('离开china');
+    }, false);
+
+    $('bj').addEventListener('click', function () {
+        alert('离开beijing');
+    }, false);
+
+    $('hd').addEventListener('click', function () {
+        alert('离开haiding');
+    }, false);
+
+</script>
+</html>

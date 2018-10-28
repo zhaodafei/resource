@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第二种绑定事件的方式 用时间属性事件来绑定事件函数</title>
+    <script type="text/javascript">
+        /**
+         *  第2种绑定事件的方式
+         *  用事件属性来绑定事件函数
+         */
+        window.onload = function () {
+            // alert('页面加载 hello world');
+
+            // 第一个好处,完成了行为的分离
+            document.getElementById('test1').onclick = function () {
+                alert("有人点击我");
+            };
+
+            // 第二个好处,便于操作当事对象,因为 function 是作为 对象的 on*** 属性出现的,
+            // 因此,函数里操作该对象,直接用 this 就能引用当事对象
+            document.getElementById('test2').onclick = function () {
+                this.style.background = 'yellow';
+            }
+
+            // 第三个好处,可以方便的读取 "事件对象"
+            // 在事件触发时,系统自动吧 "事件对象" 传递给 "事件函数",以其第1个参数来传
+            document.getElementById("test3").onclick=function (ev) {
+                // console.log(ev);
+                var testh = document.getElementById(('test4'));
+                testh.style.left = ev.clientX + 'px';
+                testh.style.top = ev.clientY + 'px';
+            }
+        }
+    </script>
+    <style type="text/css">
+        div {
+            background: blueviolet;
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+        }
+
+        #test4 {
+            width: 20px;
+            height: 20px;
+            background: yellowgreen;
+            z-index: 1000;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="test1">点击我有弹窗</div>
+<div id="test2">点击我改变颜色</div>
+<div id="test3"></div>
+<div id="test4"></div>
+</body>
+</html>

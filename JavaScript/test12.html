@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>动态语言谈不上多态</title>
+    <script type="text/javascript">
+        /**
+         * 例如: 在 java 中
+         *
+         * class Dog{
+         *     void bark(){}
+         * }
+         *
+         * class JingBa(){
+         *     void bark(){
+         *         system.out.println('wangwang');
+         *     }
+         * }
+         *
+         * class Hashiqi(){
+         *     void bark(){
+         *         system.out.pirnln('wwww');
+         *     }
+         * }
+         *
+         * 某个方法,大致如下:
+         * void call(Jingba j){ // 此处,j 变量前,声明了j必须是Jingba类的实例
+         *     j->bark();
+         * }
+         *
+         * void call2(Hashiqi h){ //此处,h变量前,声明了 h 必须是 Hashiqi 类的实例
+         *     j->bark();
+         * }
+         * 如上---不够灵活
+         * void call(Dog d){ //此处,声明必须是狗类的实例,所以传 j,h 都行,因为 "哈士奇"也是够
+         *     d->bark();
+         * }
+         *
+         * 经过上面的改造
+         * ------- 本来只能接受 Hashiqi,Jingba 实例的,
+         * 现在能接受的范围宽了,只要是 Dog 的实例,或 Dog 子类的实例,都可以.
+         *
+         * ---- 同时,将导致一个后果,传一个 Dog 实例过来
+         * 有可能是 Hashiqi 对象, www 叫
+         * 也有可能是 Jingba 对象, wangwang 叫
+         *
+         * ---- 都是传 Dog 对象进来,竟然有不同的叫声,称之为多态
+         */
+
+        /**
+         * 如上可知, js 里谈不上多态,--- 因为 Js 就没有限制参数类型
+         */
+        function Dog() {
+            this.leg = 4;
+            // this.bark = null;
+            this.bark= function () {
+                console.log("我被覆盖了"); //其他狗不叫,我会叫
+            }
+        }
+
+        function Hashiqi() {
+            this.bark=function () {
+                console.log('www');
+            }
+        }
+
+        function Jingba() {
+            this.bark=function () {
+                console.log('wangwang');
+            }
+        }
+
+        Hashiqi.prototype = Jingba.prototype = new Dog();
+        var h = new Hashiqi();
+        var j = new Jingba();
+
+        function test(dog) {
+            dog.bark();
+        }
+
+        test(h);
+        test(j);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

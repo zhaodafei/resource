@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>继承demo</title>
+    <script type="text/javascript">
+        function Dog() {
+            this.bark=function () {
+                console.log('汪汪');
+            }
+        }
+        function Peter() {
+            this.fire= function () {
+                console.log('第一斗犬')
+            }
+        }
+
+        // 原型继承
+        Peter.prototype = new Dog();
+
+        var huzi = new Peter();
+        huzi.bark();
+
+        function Zangao() {
+            this.eat=function () {
+                console.log('会吃,会吹');
+            }
+        }
+
+        Zangao.prototype = new Dog();
+        Zangao.prototype.bark = function () {
+            console.log('呜呜');
+        };
+
+        var za = new Zangao();
+        za.bark();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

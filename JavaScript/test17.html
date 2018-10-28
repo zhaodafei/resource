@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件停止传播与效果阻止</title>
+</head>
+<body>
+    <form action="" id="fm">
+        <p><input type="text" id="age" name="age" /></p>
+        <input type="submit" value="提交">
+    </form>
+</body>
+<script type="text/javascript">
+    /**
+     *  思考: 事件(捕捉/冒泡)的过程中,能否停止事件的传播?
+     *   比如,被 bj 捕捉后,就结束, hd 别再想捕捉了
+     *   或 hd 冒泡后,事件结束, bj 无法冒泡了
+     *
+     *   答: 当然能,可以停止事件的传播
+     *        用事件对象的 stopPropagation();
+     *
+     *  思考:  以表单为例,我想点击 'onsubmit' 时,检查是否填写完全
+     *         如果不完全不让他提交,
+     *         即----取消事件本应该有的效果!!能否做到
+     *  答:  用事件对象的  preventDefault();
+     * @param id
+     * @returns {HTMLElement}
+     */
+    function $(id) {
+        return document.getElementById(id);
+    }
+    $('fm').addEventListener('submit',function (ev) {
+        if ($('age').value == '') {
+            alert('你不能提交');
+            ev.preventDefault();
+        }
+    })
+</script>
+</html>

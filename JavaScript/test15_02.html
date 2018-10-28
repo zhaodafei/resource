@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>第三种事件绑定</title>
+    <script type="text/javascript">
+        /**
+         * 第一种绑定:行为结构不分离,效率也低
+         * <a onclick="xxx()">
+         *
+         *  第二种绑定:只能绑定1个事件
+         *  xxxDomObject.onclick = function(){}
+         *
+         *  第三种绑定: addEventLister
+         */
+
+        // 一个页面的 js 由多人团队开发;
+        // A,B 都在写 onload 事件
+        // 则 后面的事件,吧前面的onload 属性值都给覆盖了
+        // 这里只会输出 world
+        // window.onload = function () {
+        //     alert("hello");
+        // };
+        // window.onload = function () {
+        //     alert('world')
+        // };
+
+        /**
+         *  第三种绑定方式:
+         *  W3C 中的标准 --addEventListener
+         *
+         *  1: 绑在那个事件上? click,load,change,blur,focus,mouseover,mouserup.....等
+         *  2: 绑定什么函数-----自定义事件函数
+         *  3: 什么方式监听执行事件函数? 捕捉?,冒泡??
+         *
+         *  语法: xxxxDomObject,addEventListener();
+         *
+         *  注意细节:
+         *      1: 事件名,一律不带on
+         *      2:绑定事件函数中的 "this" 指绑定该事件的对象
+         *      3:执行顺序,是按绑定顺序来执行的
+         */
+    </script>
+    <style type="text/css">
+        div {
+            width: 400px;
+            height: 400px;
+            background: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div id="test1">
+
+    </div>
+
+</body>
+<script type="text/javascript">
+    var test1 = document.getElementById('test1');
+    test1.addEventListener('click', function () {
+        this.style.backgroundColor = 'red';
+        alert('变色');
+    }, false);
+    test1.addEventListener('click', function () {
+        alert('hello')
+    }, false);
+    test1.addEventListener('click', function () {
+        alert('world');
+    }, false);
+
+    // 通过函数名来引入外部函数
+    test1.addEventListener('click', foo);
+    function foo() {
+        alert('我是 foo 方法');
+    }
+
+    // 当传递参数值时，使用"匿名函数"调用带参数的函数：
+    test1.addEventListener('click', function () {
+        var parame1 = 12;
+        var parame2 = 24;
+        bar(parame1, parame2);
+    });
+    function bar(p1, p2) {
+        alert(p1 + "-----" + p2);
+    }
+
+
+</script>
+</html>

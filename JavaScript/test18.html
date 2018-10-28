@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件的解除绑定</title>
+    <script type="text/javascript">
+        function cry() {
+            alert('呜呜呜,哭起来');
+        }
+        function la() {
+            alert('哈哈,笑起来');
+        }
+        function addcry() {
+            document.getElementsByTagName('p')[0].addEventListener('click',cry,false)
+        }
+        function addla() {
+            document.getElementsByTagName('p')[0].addEventListener('click',la,false)
+        }
+        function remcry() {
+            document.getElementsByTagName('p')[0].removeEventListener('click',cry,false)
+        }
+        function remla() {
+            document.getElementsByTagName('p')[0].removeEventListener('click',la,false)
+        }
+
+    </script>
+    <style type="text/css">
+        p{
+            margin: 5px;
+            border: 1px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <p><a href="#">hello world</a></p>
+    <p>
+        <input type="button" value="让你哭" onclick="addcry();">
+        <input type="button" value="让你笑" onclick="addla();">
+        <input type="button" value="你别哭" onclick="remcry();">
+        <input type="button" value="你别笑" onclick="remla();">
+    </p>
+</body>
+</html>

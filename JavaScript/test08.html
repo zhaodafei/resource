@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>js 面向对象私有属性</title>
+    <script type="text/javascript">
+        function Girl(name ,bf) {
+            var secret = bf;
+             this.name = name;
+
+             //通过 showlove 做接口,来读取私有属性 secret
+            this.showlove = function () {
+                return secret;
+            }
+            //移情别恋
+            this.movelove = function () {
+                return secret = '薛潘';
+            }
+        }
+
+        var girl = new Girl('林黛玉', '贾宝玉');
+
+        console.log(girl.name + ' 喜欢 ' + girl.showlove());
+        girl.movelove();
+        console.log(girl.name + ' 喜欢 ' + girl.showlove() )
+    </script>
+</head>
+<body>
+
+</body>
+</html>
