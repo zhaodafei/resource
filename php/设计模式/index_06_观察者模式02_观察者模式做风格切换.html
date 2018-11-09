@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>------------观察者模式02 ---------面向过程完成页面风格切换</title>
+    <style>
+        div {
+            margin: 10px;
+            width: 500px;
+            height: 200px;
+        }
+
+        #content {
+            border: 1px solid red;
+        }
+
+        #ad {
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+<h1>面向过程,不用模式来切换</h1>
+<select name="" id="">
+    <option value="male">男式风格</option>
+    <option value="female">女士风格</option>
+</select>
+
+<input type="button" value="观察尾部" onclick="t1()"/>
+<input type="button" value="不观察尾部" onclick="t2()"/>
+
+<div id="content">我是内容</div>
+<div id="ad">我是广告</div>
+<div id="study">??问题???</div>
+</body>
+<script type="text/javascript">
+    var sel = document.getElementsByTagName('select')[0];
+    sel.observers = {};
+    sel.attach = function (key, obj) { // 添加观察
+        this.observers[key] = obj;
+    };
+    sel.detach = function (key) {  // 取消观察
+        delete this.observers[key];
+    };
+    sel.onchange = sel.notify = function () { //监听 select 变化,通知其他对象
+        for (var key in  this.observers) {
+            this.observers[key].update(this);
+        }
+    };
+
+
+    // 客户端
+    var content = document.getElementById('content');
+    var ad = document.getElementById('ad');
+
+    content.update = function (observee) {
+        if (observee.value == 'male') {
+            this.style.backgroundColor = 'gray';
+        } else if (observee.value == 'female') {
+            this.style.backgroundColor = 'pink';
+        }
+    };
+    ad.update = function (observee) {
+        if (observee.value == 'male') {
+            this.innerHTML = '汽车';
+        } else if (observee.value == 'female') {
+            this.innerHTML = '减肥';
+        }
+    };
+
+    // 让 content 观察 selcet 的变化
+    sel.attach('content', content);
+    sel.attach('ad', ad);
+
+    // ----------------------------- 添加 study 区
+    var study = document.getElementById('study');
+    study.update = function (observee) {
+        if (observee.value == 'male') {
+            this.innerHTML = '学习计算机';
+        } else if (observee.value = 'femal') {
+            this.innerHTML = '学习美容';
+        }
+    };
+    sel.attach('study', study);
+
+    //-----------------------------  是否观察尾部 study 区,
+    function t1() {
+        sel.attach('study');
+    }
+    function t2() {
+        sel.detach('study');
+    }
+</script>
+</html>

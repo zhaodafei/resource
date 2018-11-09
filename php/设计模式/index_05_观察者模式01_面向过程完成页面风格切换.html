@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>------------观察者模式01 ---------面向过程完成页面风格切换</title>
+    <style>
+        div {
+            margin: 10px;
+            width: 500px;
+            height: 200px;
+        }
+
+        #content {
+            border: 1px solid red;
+        }
+
+        #ad {
+            border: 1px solid blue;
+        }
+    </style>
+
+</head>
+<body>
+<h1>面向过程,不用模式来切换</h1>
+<select name="" id="" onchange="t();">
+    <option value="male">男式风格</option>
+    <option value="female">女士风格</option>
+</select>
+
+<div id="content">我是内容</div>
+<div id="ad">我是广告</div>
+<div id="study">??问题???</div>
+</body>
+<script type="text/javascript">
+    function t() {
+        var sel = document.getElementsByTagName('select')[0];
+        // console.log(sel.value);
+        if (sel.value == 'male') {
+            document.getElementById('content').style.backgroundColor = 'gray';
+            document.getElementById('ad').innerHTML = '汽车';
+        } else if (sel.value == 'female') {
+            document.getElementById('content').style.backgroundColor = 'pink';
+            document.getElementById('ad').innerHTML = '减肥';
+        }
+    }
+
+    // 观察上面代码,如果新增了一个 study 区,在切换时,学习内容也要随之切换
+    // 那么,就需要改动 t() 函数!!
+    // 对于修改又开放了,
+    // 思考 --- 如果需要新监听 footer 区,如何不改原来的代码,而值增加
+</script>
+</html>
