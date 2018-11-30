@@ -2,7 +2,7 @@
 
  
 
-| [Xperia Z3+](http://bbs.gfan.com/forum.php?mod=viewthread&tid=9191328) | [系统之家](http://www.xitongzhijia.net/win7/201801/117820.html) and [系统之家](http://www.xitongzhijia.net/ | [ubuntu系统下载](http://cdimage.ubuntu.com/ubuntu-gnome/releases/) |
+| [Xperia Z3+](http://bbs.gfan.com/forum.php?mod=viewthread&tid=9191328) | [系统之家](http://www.xitongzhijia.net/win7/201801/117820.html) and [系统之家](http://www.xitongzhijia.net/) | [ubuntu系统下载](http://cdimage.ubuntu.com/ubuntu-gnome/releases/) |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [openoffice](http://www.openoffice.org/download/index.html)  | [libreoffice](https://www.libreoffice.org/)                  | [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via) |
 | [jd-gui 反编译java 文件](http://jd.benow.ca/)                | [postman 官网](https://www.getpostman.com/)                  | [typora 官网](https://typora.io/)                            |
