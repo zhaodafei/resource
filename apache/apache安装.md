@@ -1,14 +1,14 @@
-apache 安装
+### apache 安装
 1)官方地址: http://httpd.apache.org/docs/2.4/install.html
 安装Apache 必须的源码包: [Apache, Apr,Apr-Util,Pcre],并且确认系统中已经安装了[gcc,gcc-c++,make,autoconf,automake],
 
-2)centos系统中可以:
+### 2)centos系统中可以:
 
 ```
 yum install -y gcc gcc-c++ autoconf libjpeg libjpeg-devel libpng libpng-devel freetype freetype-devel libpng libpng-devel libxml2 libxml2-devel zlib zlib-devel glibc glibc-devel glib2 glib2-devel bzip2 bzip2-devel ncurses curl openssl-devel gdbm-devel db4-devel libXpm-devel libX11-devel gd-devel gmp-devel readline-devel libxslt-devel expat-devel xmlrpc-c xmlrpc-c-devel
 ```
 
-3),下载好源码
+### 3),下载好源码
 
 ```
 wget  https://mirrors.tuna.tsinghua.edu.cn/apache//httpd/httpd-2.4.37.tar.gz
@@ -17,7 +17,7 @@ wget  http://mirror.bit.edu.cn/apache//apr/apr-util-1.6.1.tar.gz
 wget http://jaist.dl.sourceforge.net/project/pcre/pcre/8.36/pcre-8.36.tar.gz
 ```
 
-4).安装
+### 4).安装
 
 ```
 #安装过程中缺少依赖自行安装,我的pcre已经用apt安装好了

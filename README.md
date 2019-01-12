@@ -1,6 +1,6 @@
 # resource  
 
- 
+ ### 工具
 
 | xxx                                                          | xxx                                                          | xxx                                                          |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
@@ -21,4 +21,13 @@
 | [jQuery 树插件](http://http://www.treejs.cn/v3/demo.php#_101) |                                                              |                                                              |
 | vagrant box: [vagrantbox.es](http://www.vagrantbox.es/)      | [centos box](http://cloud.centos.org/centos/7/vagrant/x86_64/images/) | [ubuntu box -releases版本](http://cloud-images.ubuntu.com/releases/releases/ "记得要下载release版本") |
 |                                                              |                                                              |                                                              |
+
+
+
+web: js
+
+| xxx                                                          | xxx  | xxx  |
+| ------------------------------------------------------------ | ---- | ---- |
+| [中国 / 省市区 / 三级联动 / 地址选择器](https://github.com/fengyuanchen/distpicker) |      |      |
+|                                                              |      |      |
 
