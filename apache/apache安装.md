@@ -60,9 +60,11 @@ vim httpd.conf   #修改配置
 ServerName www.test.com:80
 
 ##Apache常用命令
-/data/server/apache/bin/apachectl -v   #查看Apache版本
+/data/server/apache/bin/apachectl -v   #查看 Apache 版本
 /data/server/apache/bin/apachectl start
 /data/server/apache/bin/apachectl restart
+/data/server/apache/bin/apachectl configtest #检查配置文件是否正确
+ps -aux | grep httpd   # 查看 apache 状态
 
 ```
 
@@ -99,5 +101,27 @@ ServerName www.test.com:80
 #LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 #LoadModule rewrite_module modules/mod_rewrite.so
 #LoadModule proxy_http_module modules/mod_proxy_http.so  
+```
+
+### 使用ip访问,骚气操作
+
+```
+#http://192.168.1.202/api/hello/world       #后端PHP访问方式
+#http://192.168.1.202/test/dist/index.html  #前端访问方式
+#/data/www/web/test/public    前端
+
+<IfModule alias_module>
+    #解析php
+    ProxyRequests Off
+    ProxyPassMatch ^/(.*\.php(/.*)?)$ fcgi://127.0.0.1:9000/data/www/test/public/$1
+    Alias /test  "/data/www/test/public"  #使用别名访问
+</IfModule>
+<Directory /data/www/test/public>
+    Options FollowSymlinks
+    DirectoryIndex index.php
+    Allow from all
+    AllowOverride All
+    Require all granted
+</Directory>
 ```
 
