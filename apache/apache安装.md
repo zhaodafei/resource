@@ -61,6 +61,7 @@ ServerName www.test.com:80
 
 ##Apache常用命令
 /data/server/apache/bin/apachectl -v   #查看 Apache 版本
+/data/server/apache/bin/apachectl -V   #大写V 查看 Apache 版本,安装路径等其他信息
 /data/server/apache/bin/apachectl start
 /data/server/apache/bin/apachectl restart
 /data/server/apache/bin/apachectl configtest #检查配置文件是否正确
@@ -101,9 +102,14 @@ ps -aux | grep httpd   # 查看 apache 状态
 #LoadModule proxy_fcgi_module modules/mod_proxy_fcgi.so
 #LoadModule rewrite_module modules/mod_rewrite.so
 #LoadModule proxy_http_module modules/mod_proxy_http.so  
+
+#方法三,解析PHP,需要Apache 2.4.9  以后
+<FilesMatch \.php$>
+     SetHandler "proxy:fcgi://127.0.0.1:9000"
+</FilesMatch>
 ```
 
-### 使用ip访问,骚气操作
+### 使用ip访问,骚气操作01
 
 ```
 #http://192.168.1.202/api/hello/world       #后端PHP访问方式
@@ -123,5 +129,32 @@ ps -aux | grep httpd   # 查看 apache 状态
     AllowOverride All
     Require all granted
 </Directory>
+```
+
+### 使用ip访问,骚气操作01
+
+```
+在 conf/httpd.conf 文件中添加
+#解析PHP
+<FilesMatch \.php$>
+     SetHandler "proxy:fcgi://127.0.0.1:9000"
+</FilesMatch>
+
+#访问方法 ip/index.php
+<Directory "/data/www/web/fsnh/api/trunk/public">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride all
+    Require all granted
+</Directory>
+
+
+#访问方法 ip/aaa/index.php
+Alias /aaa "/data/www/cfsh/CFSH/public"
+<Directory "/data/www/cfsh/CFSH/public">
+    Options Indexes FollowSymLinks MultiViews
+    AllowOverride all
+    Require all granted
+</Directory>
+
 ```
 

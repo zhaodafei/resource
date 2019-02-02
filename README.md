@@ -15,12 +15,12 @@
 
 
 
-| xxx                                                          | xxx                                                          | xx                                                           |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| [极客学院Wiki](http://wiki.jikexueyuan.com/list/front-end/)  | [docker](https://yeasy.gitbooks.io/docker_practice/content/) and [docker 官网](https://docs.docker.com/install/) | [java知识分享](http://java1234.com/)                         |
-| [jQuery 树插件](http://http://www.treejs.cn/v3/demo.php#_101) |                                                              |                                                              |
-| vagrant box: [vagrantbox.es](http://www.vagrantbox.es/)      | [centos box](http://cloud.centos.org/centos/7/vagrant/x86_64/images/) | [ubuntu box -releases版本](http://cloud-images.ubuntu.com/releases/releases/ "记得要下载release版本") |
-|                                                              |                                                              |                                                              |
+| xxx                                                         | xxx                                                          | xx                                                           |
+| ----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [极客学院Wiki](http://wiki.jikexueyuan.com/list/front-end/) | [docker](https://yeasy.gitbooks.io/docker_practice/content/) and [docker 官网](https://docs.docker.com/install/) | [java知识分享](http://java1234.com/)                         |
+| [jQuery 树插件](http://www.treejs.cn/v3/demo.php#_101)      |                                                              |                                                              |
+| vagrant box: [vagrantbox.es](http://www.vagrantbox.es/)     | [centos box](http://cloud.centos.org/centos/7/vagrant/x86_64/images/) | [ubuntu box -releases版本](http://cloud-images.ubuntu.com/releases/releases/ "记得要下载release版本") |
+|                                                             |                                                              |                                                              |
 
 
 
