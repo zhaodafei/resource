@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML5大文件切割上传</title>
+    <script type="text/javascript">
+
+    /**
+     *  用到的API
+     *   file-->继承自-->Blob
+     *   Blob有slice方法,可以截取二进制对象的一部分
+     *
+     *   思路:
+     *   截取10M,上传
+     *   判断文件有没有截取完毕
+     *
+     *   while 还有数据
+     *   {
+     *       截取, Ajax 上传
+     *   }
+     *  ------------------------------
+     *  2)  用定时器,不断调用上传方法
+     */
+    var xhr = new XMLHttpRequest();
+    var clock = null;
+
+    function fire() {
+        clock = window.setInterval(sendfile, 1000);
+    }
+
+    //闭包计数器
+    var sendfile=(function () {
+
+        const LENGTH = 10 * 1024 * 1024; //每次切10M
+        var  sta = 0;
+        var  end = sta + LENGTH;
+
+        var blob = null;
+        var fd = null;
+        console.log('eeeeeeeeeeee');
+        return (function () {
+            console.log('ddddddddd');
+            var mov = document.getElementsByName('mov')[0].files[0];
+
+            //如果sta>mov.size,就结束了
+            if (sta > mov.size) {
+                clearInterval(clock);
+                return;
+            }
+
+            blob = mov.slice(sta, end);
+
+            fd = new FormData();
+            fd.append('part', blob);
+
+            up(fd);
+
+            sta = end;
+            end = sta + LENGTH;
+
+            percent = 100 * end / mov.size;
+            if (percent > 100) {
+                percent = 100;
+            }
+            document.getElementById('bar').style.width = percent + '%';
+        });
+    })();
+
+    function up(fd) {
+        console.log('upup');
+        xhr.open('POST', './index_file_upload.php', true);
+        xhr.send(fd);
+    }
+
+    </script>
+
+    <style>
+        #progress {
+            width: 500px;
+            height: 30px;
+            border: 1px solid green;
+        }
+        #bar {
+            width: 0;
+            height: 100%;
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<h1>HTML5大文件切割上传</h1>
+<div id="progress">
+    <div id="bar"></div>
+</div>
+<input type="file" name="mov" onchange="fire()">
+
+<p>PHP 代码</p>
+<p>
+    if (!file_exists('./upload/up1.wmv')) {
+    move_uploaded_file($_FILES['part']['tmp_name'], './upload/up1.wmv');
+    } else {
+    file_put_contents('./upload/up1.wmv', file_get_contents($_FILES['part']['tmp_name']), FILE_APPEND);
+    }
+    echo 'ok-php';
+</p>
+</body>
+</html>

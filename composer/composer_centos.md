@@ -29,6 +29,7 @@ composer require monolog/monolog:"1.24.0"   #安装monolog指定版本
 composer require "monolog/monolog:1.24.0"   #安装monolog指定版本
 composer install 
 composer update
+composer dump-autoload   #添加自定义后文件执行
 
 设置镜像地址:
 1) 全局配置
