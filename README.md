@@ -11,7 +11,7 @@
 | [mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/) | [mysql-workbench-community 一款数据库管理工具](https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi) | [Create bootable USB drives the easy way](https://rufus.ie/en_IE.html?tdsourcetag=s_pcqq_aiomsg) |
 | [Firefox beta development](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [我告诉你 系统&&软件](https://msdn.itellyou.cn/)             | [吾爱破解](https://www.52pojie.cn/)                          |
 | [xx-net](https://github.com/XX-net/XX-Net)                   | [firefly-proxy](https://github.com/yinghuocho/firefly-proxy) | [screentogif](https://www.screentogif.com/?l=zh_cn) &&  [gifcam](http://blog.bahraniapps.com/gifcam/) |
-|                                                              |                                                              |                                                              |
+| [完整的开源和商业软件平台](https://sourceforge.net/)         |                                                              |                                                              |
 
 
 
