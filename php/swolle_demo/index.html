@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello fei</title>
+</head>
+<body>
+<button onclick="sendMsg()">发送数据</button>
+<script>
+    var wsServer = "ws://192.168.56.11:9506";
+    var websocket = new WebSocket(wsServer);
+
+    websocket.onopen=function (evt) {
+        console.log("Connected to WebSocket server. 连接到服务器");
+        websocket.send("发送给PHP消息open");
+    };
+    websocket.onclose=function (evt) {
+        console.log("Disconnected 断开连接");
+    };
+    websocket.onmessage=function (evt) {
+        console.log("Retrieved data from server: 从服务器获取数据"+evt.data);
+    };
+    websocket.onerror = function (evt, e) {
+        console.log("Error occured:" + evt.data);
+    };
+
+    //发送
+    function sendMsg(){
+        websocket.send("发送数据给PHP");
+    }
+
+
+</script>
+</body>
+</html>
