@@ -1,4 +1,4 @@
-# resource  
+# resource    PHP、Linux等服务器类Bug问题解决  893202941
 
  ### 工具
 
@@ -45,4 +45,3 @@
 
 
 
-PHP、Linux等服务器类Bug问题解决  893202941
