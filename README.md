@@ -1,4 +1,4 @@
-# resource    PHP、Linux等服务器类Bug问题解决  893202941
+### resource    PHP、Linux等服务器类Bug问题解决qq群  893202941
 
  ### 工具
 
