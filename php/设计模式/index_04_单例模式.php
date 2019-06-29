@@ -136,7 +136,7 @@ if ($s1 === $s2) {
 **/
 
 // -----------------第六步, 禁止克隆
-class singleton
+/*class singleton
 {
     protected static $ins = null;
 
@@ -161,4 +161,32 @@ class singleton
 }
 
 $s1 = singleton::getIns();
-$s2 = clone $s1;  //现在报错了,不能被 clone  终于成功了 ok
+$s2 = clone $s1;  //现在报错了,不能被 clone  终于成功了 ok */
+
+//demo 2 单例模式---日志输出
+class  Logger{
+    static private $instance = null;
+
+    static function getInstance()
+    {
+        if (self::$instance == null) {
+            self::$instance = new Logger();
+        }
+        return self::$instance;
+    }
+
+    private function __construct()
+    {
+    }
+    private function __clone()
+    {
+    }
+
+    function Log($str)
+    {
+        //注意日志
+        echo $str;
+    }
+}
+
+Logger::getInstance()->Log("Checkpoint");
