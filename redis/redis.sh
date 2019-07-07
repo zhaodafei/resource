@@ -1,8 +1,38 @@
 #!bin/bash
-#redis 一键安装脚本
-mkdir -p  /data/server /data/www
-cd /data/server/
-wget http://download.redis.io/releases/redis-4.0.8.tar.gz
+echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo "::                                                                          ::"
+echo "::      欢迎使用linux 一键编译安装redis-4.0.8                                 ::"
+echo "::      本脚本由  ☆赵大飞☆  编写，如有疑问请联系本人！                       ::"
+echo "::      转载请不要删除本信息！      1097625354@qq.com                        ::"
+echo "::                                                                          ::"
+echo "::                                                                          ::"
+echo "::      作者：☆赵大飞☆        QQ:1097625354                                ::"
+echo "::                                                                          ::"
+echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo ""
+echo ""
+echo "请选择你要的操作"
+echo "     1、ubuntu16 创建基础目录 /data/download /data/oneKey  /data/server /data/www"
+echo "     2、centos7 创建基础目录 /data/download /data/oneKey  /data/server /data/www"
+echo "     3、跳过"
+echo ""
+read num
+case "$num" in
+	[1] )
+		mkdir -p  /data/download /data/oneKey  /data/server /data/www
+		;;
+	[2] )
+		mkdir -p  /data/download /data/oneKey  /data/server /data/www
+		;;
+	[3] )
+		echo "跳过"
+		;;
+		*) echo "选择错误，退出";;
+esac
+
+
+wget -P /data/download/ http://download.redis.io/releases/redis-4.0.8.tar.gz
+cd /data/download/
 tar -xzvf redis-4.0.8.tar.gz  -C /data/server/
 cd /data/server/redis-4.0.8/
 make
