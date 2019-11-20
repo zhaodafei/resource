@@ -5,7 +5,7 @@
 | xxx                                                          | xxx                                                          | xxx                                                          |
 | :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [Xperia Z3+](http://bbs.gfan.com/forum.php?mod=viewthread&tid=9191328) | [系统之家](http://www.xitongzhijia.net/win7/201801/117820.html) and [系统之家](http://www.xitongzhijia.net/) | [ubuntu系统下载](http://cdimage.ubuntu.com/ubuntu-gnome/releases/) |
-| [openoffice](http://www.openoffice.org/download/index.html)  | [libreoffice](https://www.libreoffice.org/)                  | [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via) |
+| [openoffice](http://www.openoffice.org/download/index.html)  | [libreoffice](https://www.libreoffice.org/)                  |                                                              |
 | [jd-gui 反编译java 文件](http://jd.benow.ca/)                | [postman 官网](https://www.getpostman.com/)                  | [typora 官网](https://typora.io/)                            |
 | [Free Download Manager 官网](https://www.freedownloadmanager.org/) | [Redis Desktop Manager 官网](https://redisdesktop.com/)<br /> [RedisDesktopManager0.8.8 下载地址](https://github.com/uglide/RedisDesktopManager/releases/tag/0.8.8) | [各种系统桌面背景图](http://oswallpapers.com/)               |
 | [mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/) | [mysql-workbench-community 一款数据库管理工具](https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi) | [mysql-shell 工具文档](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-features.html "mysql-shell") |
@@ -41,7 +41,13 @@
 |                                                              |                                                              |                                                              |
 |                                                              |                                                              |                                                              |
 
+### 其他工具
 
+| XXX                                                          | XXX  | XXX  |
+| ------------------------------------------------------------ | ---- | ---- |
+| [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via) |      |      |
+| [一款懂你的手机电子书 阅读](https://www.coolapk.com/apk/com.gedoor.monkeybook) |      |      |
+|                                                              |      |      |
 
 
 
