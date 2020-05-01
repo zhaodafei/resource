@@ -12,7 +12,7 @@
 | [Firefox beta development](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [我告诉你 系统&&软件](https://msdn.itellyou.cn/)             | [吾爱破解](https://www.52pojie.cn/)                          |
 | [xx-net](https://github.com/XX-net/XX-Net)                   | [firefly-proxy](https://github.com/yinghuocho/firefly-proxy) | [screentogif](https://www.screentogif.com/?l=zh_cn) &&  [gifcam](http://blog.bahraniapps.com/gifcam/) |
 | [完整的开源和商业软件平台](https://sourceforge.net/)         | [FinalShell ](<http://www.hostbuf.com/t/988.html>)           | [chrome 下载](<https://www.google.cn/chrome/>)               |
-| [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) |                                                              |
+| [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) | [crx4chrome chrome 插件下载](<https://www.crx4chrome.com/>)  |
 | [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") |                                                              |
 
 
