@@ -1,4 +1,4 @@
-### resource    PHP、Linux等服务器类Bug问题解决qq群  893202941
+### resource    PHP、java、web、Linux等Bug问题解决qq: 1097625354
 
  ### 工具
 
@@ -13,7 +13,11 @@
 | [xx-net](https://github.com/XX-net/XX-Net)                   | [firefly-proxy](https://github.com/yinghuocho/firefly-proxy) | [screentogif](https://www.screentogif.com/?l=zh_cn) &&  [gifcam](http://blog.bahraniapps.com/gifcam/) |
 | [完整的开源和商业软件平台](https://sourceforge.net/)         | [FinalShell ](<http://www.hostbuf.com/t/988.html>)           | [chrome 下载](<https://www.google.cn/chrome/>)               |
 | [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) | [crx4chrome chrome 插件下载](<https://www.crx4chrome.com/>)  |
-| [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") |                                                              |
+| [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") | faststone capture [ 一款截图软件 ]                           |
+|                                                              |                                                              | Snipast [ 一款截图软件]                                      |
+|                                                              |                                                              |                                                              |
+
+
 
 
 
