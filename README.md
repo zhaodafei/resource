@@ -14,7 +14,7 @@
 | [完整的开源和商业软件平台](https://sourceforge.net/)         | [FinalShell ](<http://www.hostbuf.com/t/988.html>)           | [chrome 下载](<https://www.google.cn/chrome/>)               |
 | [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) | [crx4chrome chrome 插件下载](<https://www.crx4chrome.com/>)  |
 | [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") | faststone capture [ 一款截图软件 ]                           |
-|                                                              |                                                              | Snipast [ 一款截图软件]                                      |
+| [SQL省市区数据](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov/releases) |                                                              | Snipast [ 一款截图软件]                                      |
 |                                                              |                                                              |                                                              |
 
 
@@ -35,7 +35,7 @@
 | xxx                                                          | xxx                                                          | xxx                                   |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------- |
 | [中国 / 省市区 / 三级联动 / 地址选择器](https://github.com/fengyuanchen/distpicker) | [Element](https://element.eleme.cn/#/zh-CN/component/installation) | [Bootstrap](https://www.bootcss.com/) |
-| [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)      |                                                              |                                       |
+| [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)      | [WebUploader API 前端上传文件](http://fex.baidu.com/webuploader/doc/index.html) |                                       |
 
 ### PHP
 
