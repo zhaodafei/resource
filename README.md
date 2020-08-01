@@ -36,13 +36,15 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [中国 / 省市区 / 三级联动 / 地址选择器](https://github.com/fengyuanchen/distpicker) | [Element](https://element.eleme.cn/#/zh-CN/component/installation) | [Bootstrap](https://www.bootcss.com/)                        |
 | [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)      | [WebUploader API 前端上传文件](http://fex.baidu.com/webuploader/doc/index.html) | [mocky 免费API](https://designer.mocky.io/design/confirmation) |
+| [flatuicolors 颜色](https://flatuicolors.com/)               |                                                              |                                                              |
+|                                                              |                                                              |                                                              |
 
 ### PHP
 
 | [php-src](https://github.com/php/php-src "php-src")  PHP扩展 | [pecl](https://pecl.php.net/ "pecl")   PHP扩展               | [phpunit](https://phpunit.readthedocs.io/en/7.3/textui.html#textui-examples-testcaseclass-php "phpunit")  PHP单元测试 |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [phpDocumentor tags](https://manual.phpdoc.org/HTMLSmartyConverter/HandS/phpDocumentor/tutorial_tags.pkg.html "phpDocumentor tags")  PHP注释文档 | [monolog](https://github.com/Seldaek/monolog "monolog")   monolog写日志 | [PHPMailer](https://github.com/PHPMailer/PHPMailer "PHPMailer")  发送邮件 |
-|                                                              |                                                              |                                                              |
+| [codepen在线编辑HTML](https://codepen.io/pen/)               |                                                              |                                                              |
 |                                                              |                                                              |                                                              |
 
 ### 其他工具
@@ -53,5 +55,11 @@
 | [一款懂你的手机电子书 阅读](https://www.coolapk.com/apk/com.gedoor.monkeybook) |      |      |
 |                                                              |      |      |
 
+### JAVA
 
+| [Spring Web MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc) | [jdk7](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html)  [jdk8](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html)  [jdk9](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase9-3934878.html) | [官网 spring 包下载地址](https://repo.spring.io/webapp/#/artifacts/browse/tree/General/libs-release-local/org/springframework/spring/4.1.0.RELEASE) |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| [mysql-connector-java各版本下载地址](https://mvnrepository.com/artifact/mysql/mysql-connector-java) |                                                              |                                                              |
+|                                                              |                                                              |                                                              |
+|                                                              |                                                              |                                                              |
 
