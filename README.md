@@ -63,3 +63,11 @@
 |                                                              |                                                              |                                                              |
 |                                                              |                                                              |                                                              |
 
+### github
+
+| XXX                                                          | XXX  | XXX  |
+| ------------------------------------------------------------ | ---- | ---- |
+| [github search API](https://docs.github.com/en/rest/reference/search) 免费API |      |      |
+| [github emojis API](https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis) 免费API |      |      |
+|                                                              |      |      |
+
