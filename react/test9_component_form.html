@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+    <script src="./react_fei/prop-types.js"></script><!-- Props 验证 -->
+</head>
+<body>
+
+<div id="example"></div>
+
+<!-- 受控组件 和 非受控组件  -->
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    // '论语', '史记', '左传', '汉书', '战国策'
+    // '孔子', '司马迁', '左丘明', '班固', '未知'
+    // 图书添加功能,和展示
+    
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponent extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                author: "", // name 作者和书名
+            };
+            this.handleSubmit = this.handleSubmit.bind(this);
+            this.handleChange = this.handleChange.bind(this);
+        }
+
+        handleSubmit(event) {
+            const name = this.nameInput.value;
+            const {author} = this.state;
+            console.log(`当前图书名称${name},作者${author}`);
+            
+            // 阻止事件默认行为(提交)
+            event.preventDefault();
+        }
+
+        handleChange(event) {
+            const author = event.target.value;
+            this.setState({author});
+        }
+        
+        render() {
+            console.log(this);
+            return(
+                <div>
+                    <h3>图书信息</h3>
+                    <form action="/foo" onSubmit={this.handleSubmit}>
+                        (非受控组件) 书名: <input type="text" ref={input => this.nameInput = input}/> <br/>
+                        (受控组件) 作者: <input type="text" value={this.state.author} onChange={this.handleChange} /> <br/>
+                        <input type="submit" value="提交"/>
+                    </form>
+                </div>
+            );
+        }
+    }
+ 
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('example'));
+    
+</script>
+
+</body>
+</html>

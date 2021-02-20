@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+    <script src="./react_fei/prop-types.js"></script><!-- Props 验证 -->
+</head>
+<body>
+
+<div id="example"></div>
+
+<!-- refs 属性 -->
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    // '论语', '史记', '左传', '汉书', '战国策'
+    // '孔子', '司马迁', '左丘明', '班固', '未知'
+    
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponent2 extends React.Component{
+        constructor(props) {
+            super(props);
+            // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick(event) {
+            console.log(event.target);// *************
+            const inputObj = this.refs.contentText;
+            console.log(inputObj.value); // 输出: 论语
+            console.log(this.textarea.value); // 输出: textarea 的内容
+        }
+        render() {
+            console.log(this);
+            return(
+                <div>
+                    <h3>图书信息</h3>
+                    <input type="text" ref="contentText" value="论语" readOnly />
+                    <textarea ref={textarea => this.textarea = textarea}></textarea>  {/*新的写法: this.textarea 要和标签名字一样*/}
+                    <button onClick={this.handleClick}>获取refs中内容</button>
+                </div>
+            );
+        }
+    }
+    
+    ReactDOM.render(<MyComponent2 />, document.getElementById('example'));
+    
+</script>
+
+</body>
+</html>

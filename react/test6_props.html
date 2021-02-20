@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+    <script src="./react_fei/prop-types.js"></script><!-- Props 验证 -->
+</head>
+<body>
+
+<div id="example"></div>
+<div id="example_01"></div>
+<div id="example2"></div>
+<div id="example3"></div> <!--  使用: 定义组件---方式02 ES6类组件(复杂组件)-->
+<!-- props 属性  -->
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    // '论语', '史记', '左传', '汉书', '战国策'
+    // '孔子', '司马迁', '左丘明', '班固', '未知'
+    function MyComponent(props) {
+        return(
+            <div>
+                <h3>图书信息</h3>
+                <ul>
+                    <li>书名: {props.name}</li>
+                    <li>价格: {props.price}</li>
+                    <li>作者: {props.author}</li>
+                </ul>
+            </div>
+        );
+    }
+
+    MyComponent.defaultProps = { // 设置默认值
+        price: "200",
+        author: "孔子__默认"
+    };
+    
+    // 渲染组件标签
+    const book1 = {
+        name: "论语",
+        price: "100",
+        author: "孔子",
+    };
+    ReactDOM.render(<MyComponent name={book1.name} price={book1.price} author={book1.author}/>, document.getElementById('example'));
+    ReactDOM.render(<MyComponent {...book1}/>, document.getElementById('example_01')); /* 传递一个对象 */
+
+    const book2 = {
+        name: "史记",
+    };
+    ReactDOM.render(<MyComponent name={book2.name} price={50} />, document.getElementById('example2'));
+
+
+
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponent2 extends React.Component{
+        render() {
+            console.log(this);
+            return(
+                <div>
+                    <h3>图书信息</h3>
+                    <ul>
+                        <li>书名: {this.props.name}</li>
+                        <li>价格: {this.props.price}</li>
+                        <li>作者: {this.props.author}</li>
+                    </ul>
+                </div>
+            );
+        }
+    }
+    const book3 = {
+        name: "左传",
+        // price: "70",
+        // author: "左丘明",
+    };
+    ReactDOM.render(<MyComponent2 {...book3} />, document.getElementById('example3'));
+    
+</script>
+
+</body>
+</html>

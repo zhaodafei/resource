@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+</head>
+<body>
+
+<div id="example"></div>
+<div id="example2"></div>
+
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    function MyComponent() {
+        return <h1>工厂函数组件</h1>;
+    }
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponent2 extends React.Component{
+        render() {
+            console.log(this);
+            return <h2>ES6类组件(复杂组件)</h2>
+        }
+    }
+    
+    // 渲染组件标签
+    ReactDOM.render(<MyComponent />, document.getElementById('example'));
+    ReactDOM.render(<MyComponent2 />, document.getElementById('example2'));
+</script>
+
+</body>
+</html>

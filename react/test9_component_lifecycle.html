@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+    <script src="./react_fei/prop-types.js"></script><!-- Props 验证 -->
+</head>
+<body>
+
+<div id="example"></div>
+<!--
+官方文档:
+有几个周期函数不在长期支持,座椅本文不做详细描述,只写官方提供三个常见的
+    https://zh-hans.reactjs.org/docs/react-component.html#lifecycle-methods
+    https://zh-hans.reactjs.org/docs/react-component.html#lifecycle-methods
+    
+    https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+    https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+-->
+
+<!-- 生命周期  -->
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    // '论语', '史记', '左传', '汉书', '战国策'
+    // '孔子', '司马迁', '左丘明', '班固', '未知'
+    // 图书添加功能,和展示
+    
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponent extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                price: 1, // 价格
+                show: true
+            };
+            this.handleClick = this.handleClick.bind(this);
+            this.handleClickUnmount = this.handleClickUnmount.bind(this);
+        }
+
+        handleClick() {
+            this.setState({
+                price: this.state.price + 1
+            })
+        }
+
+        handleClickUnmount() {
+            this.setState({
+                show: !this.state.show
+            })
+        }
+        
+        render() {
+            return(
+                <div>
+                    <h3>图书信息</h3>
+                    <button onClick={this.handleClick}>价格增加</button> &nbsp;&nbsp;&nbsp;
+                    <button onClick={this.handleClickUnmount}>销毁组件</button>
+                    {this.state.show?<MyComponentContent newPrice={this.state.price} /> :"销毁组件"}
+                </div>
+            );
+        }
+    }
+    class MyComponentContent extends React.Component{
+
+        componentDidMount() {
+            console.log("挂载时___componentDidMount");
+        }
+        componentDidUpdate() {
+            console.log("更新时___componentDidUpdate");
+        }
+        componentWillUnmount() {
+            console.log("卸载时___componentWillUnmount");
+        }
+        
+        render() {
+            return(
+                <div>
+                    <span style={{"color":"red"}}>{this.props.newPrice} </span>元
+                </div>
+            );
+        }
+    }
+    
+ 
+    
+    ReactDOM.render(<MyComponent />, document.getElementById('example'));
+    
+</script>
+
+</body>
+</html>

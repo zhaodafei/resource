@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+</head>
+<body>
+
+<div id="example"></div>
+<!-- 事件处理 onClick  和 setState -->
+<script type="text/babel">
+    class MyComponent extends React.Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                name: "DaFei",
+                isChange: false
+            };
+
+            // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+            this.handleClick = this.handleClick.bind(this);
+        }
+
+        handleClick() {
+            console.log(this);
+            const isChange = !this.state.isChange;
+            this.setState({isChange});
+        }
+
+        render() {
+            const {isChange} = this.state;
+            return (
+                <div>
+                    <p>{this.state.name}</p>
+                    <button onClick={this.handleClick}>{isChange ? '我是长江' : '我是黄河'}</button>
+                </div>
+            )
+        }
+    }
+    
+    // 渲染组件标签
+    ReactDOM.render(<MyComponent/>, document.getElementById('example'));
+</script>
+
+</body>
+</html>

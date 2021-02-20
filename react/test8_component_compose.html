@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+    <script src="./react_fei/prop-types.js"></script><!-- Props 验证 -->
+</head>
+<body>
+
+<div id="example"></div>
+
+<!-- 多个组件综合使用 -->
+<script type="text/babel">
+    // 定义组件---方式01 工厂函数组件(简单组件)
+    // '论语', '史记', '左传', '汉书', '战国策'
+    // '孔子', '司马迁', '左丘明', '班固', '未知'
+    // 图书添加功能,和展示
+    
+    // 定义组件---方式02 ES6类组件(复杂组件)
+    class MyComponentIndex extends React.Component{
+        constructor(props) {
+            super(props);
+            this.state = {
+                bookList: ['论语', '史记', '左传', '汉书', '战国策']
+            };
+            this.updateBookList = this.updateBookList.bind(this);
+        }
+
+        updateBookList(book) {
+            console.log("开始添加",book);
+            // this.state.bookList.unshift(book); // 这么写是不行的 **************
+            const {bookList} = this.state;
+            bookList.unshift(book);
+            this.setState({
+                bookList
+            });
+        }
+        
+        render() {
+            console.log(this);
+            const {bookList} = this.state;
+            return(
+                <div>
+                    <h3>图书信息</h3>
+                    <MyComponentAdd  updateBookList={this.updateBookList} />
+                    <MyComponentList bookList={bookList} />
+                </div>
+            );
+        }
+    }
+    
+    class MyComponentAdd extends React.Component{
+        constructor(props) {
+            super(props);
+            // 这边绑定是必要的，这样 `this` 才能在回调函数中使用
+            this.handleClickAdd = this.handleClickAdd.bind(this);
+        }
+        handleClickAdd() {
+            console.log(this.bookInput);
+            const book = this.bookInput.value.trim();
+            if (!book) { return }
+            this.props.updateBookList(book); // 调用父组件方法 ******************
+        }
+        
+        render() {
+            return (
+                <div>
+                    书名: <input type="text" ref={input => this.bookInput = input} />
+                    <button onClick={this.handleClickAdd}>添加</button>
+                </div>
+            )
+        }
+    }
+
+    MyComponentAdd.propTypes = {
+        updateBookList: PropTypes.func.isRequired
+    };
+    
+    class MyComponentList extends React.Component{
+        render() {
+            const {bookList} = this.props;
+            return (
+                <div>
+                    <ul>
+                        { bookList.map((item,index)=><li key={index}>书名: {item}</li>) }
+                    </ul>
+                </div>
+            )
+        }
+    }
+
+    MyComponentList.propTypes = {
+        bookList: PropTypes.array.isRequired
+    };
+    
+    ReactDOM.render(<MyComponentIndex />, document.getElementById('example'));
+    
+</script>
+
+</body>
+</html>

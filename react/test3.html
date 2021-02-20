@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+</head>
+<body>
+
+<div id="example"></div>
+
+<script type="text/babel">
+    const books = ['论语', '史记', '左传', '汉书', '战国策'];
+    // 创建虚拟DOM
+    const vDom = (
+        <ul>
+            {books.map((item,index)=><li key={index}>{item}</li>)}
+        </ul>
+    );
+
+    // 渲染虚拟DOM
+    ReactDOM.render(vDom, document.getElementById('example'));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="./react_fei/react.development.js"></script>
+    <script src="./react_fei/react-dom.development.js"></script>
+    <script src="./react_fei/babel.min.js"></script><!-- jsx 代码转为 js -->
+</head>
+<body>
+
+<div id="example"></div>
+<div id="example2"></div>
+<script type="text/javascript">
+    const myId = "DaFei";
+    var element = React.createElement('h1', {'class': myId}, 'hello world DaFei'); // 创建虚拟DOM
+    ReactDOM.render(element, document.getElementById('example')); // 渲染虚拟DOM
+</script>
+
+<script type="text/babel">
+    const vDom = <h3 class={myId}>Hello world! DaFei</h3>; // 创建虚拟DOM
+    ReactDOM.render(vDom, document.getElementById('example2')); // 渲染虚拟DOM
+</script>
+
+</body>
+</html>
