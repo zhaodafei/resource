@@ -11,7 +11,7 @@
 | [mysql 各个版本下载地址](http://ftp.ntu.edu.tw/MySQL/Downloads/) | [mysql-workbench-community 一款数据库管理工具](https://dev.mysql.com/get/Downloads/MySQLGUITools/mysql-workbench-community-6.3.10-winx64.msi) | [mysql-shell 工具文档](https://dev.mysql.com/doc/mysql-shell/8.0/en/mysql-shell-features.html "mysql-shell") |
 | [Firefox beta development](https://www.mozilla.org/zh-CN/firefox/channel/desktop/) | [我告诉你 系统&&软件](https://msdn.itellyou.cn/)             | [吾爱破解](https://www.52pojie.cn/)                          |
 | [xx-net](https://github.com/XX-net/XX-Net)                   | [firefly-proxy](https://github.com/yinghuocho/firefly-proxy) | [screentogif](https://www.screentogif.com/?l=zh_cn) &&  [gifcam](http://blog.bahraniapps.com/gifcam/) |
-| [完整的开源和商业软件平台](https://sourceforge.net/)         | [FinalShell ](<http://www.hostbuf.com/t/988.html>)           | [chrome 下载](<https://www.google.cn/chrome/>)               |
+| [完整的开源和商业软件平台](https://sourceforge.net/)         | [FinalShell ](<http://www.hostbuf.com/t/988.html>)           | [chrome 下载](<https://www.google.cn/chrome/>)  && [chrome dev 下载](https://www.google.cn/chrome/dev/) |
 | [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) | [crx4chrome chrome 插件下载](<https://www.crx4chrome.com/>)  |
 | [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") | faststone capture [ 一款截图软件 ]                           |
 | [SQL省市区数据](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov/releases) | [Everything 搜索功能软件](<https://www.voidtools.com/zh-cn/>) | Snipast [ 一款截图软件]                                      |
