@@ -48,7 +48,7 @@ $$
 
 \\ y=\arctan x \quad y=\arccot x \quad x\in(-\infty,+\infty)
 
-\\ y=\arcsin x \quad  y=\arccos   \quad x \in[-1,1]
+\\ y=\arcsin x \quad  y=\arccos   \quad x \in[-1,1]
 $$
 
 
