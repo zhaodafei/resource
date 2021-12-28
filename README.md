@@ -39,6 +39,16 @@
 | [flatuicolors 颜色](https://flatuicolors.com/)               |                                                              |                                                              |
 |                                                              |                                                              |                                                              |
 
+### Web 单页面常用插件
+
+| xxx                                          | xxx                                              | xxx  |
+| -------------------------------------------- | ------------------------------------------------ | ---- |
+| [artDialog](http://aui.github.io/artDialog/) | [jQuery Validate](https://jqueryvalidation.org/) |      |
+|                                              |                                                  |      |
+|                                              |                                                  |      |
+
+
+
 ### PHP
 
 | [php-src](https://github.com/php/php-src "php-src")  PHP扩展 | [pecl](https://pecl.php.net/ "pecl")   PHP扩展               | [phpunit](https://phpunit.readthedocs.io/en/7.3/textui.html#textui-examples-testcaseclass-php "phpunit")  PHP单元测试 |
