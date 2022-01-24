@@ -70,7 +70,7 @@
 | [Spring Web MVC](https://docs.spring.io/spring/docs/current/spring-framework-reference/web.html#mvc) | [jdk7](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-downloads-javase7-521261.html)  [jdk8](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase8-2177648.html)  [jdk9](http://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase9-3934878.html) | [官网 spring 包下载地址](https://repo.spring.io/webapp/#/artifacts/browse/tree/General/libs-release-local/org/springframework/spring/4.1.0.RELEASE) |
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [mysql-connector-java各版本下载地址](https://mvnrepository.com/artifact/mysql/mysql-connector-java) | 2个maven仓库 [mvnrepository](https://mvnrepository.com)  [search-maven-org](https://search.maven.org) |                                                              |
-|                                                              |                                                              |                                                              |
+| [若依框架](http://www.ruoyi.vip/)                            |                                                              |                                                              |
 |                                                              |                                                              |                                                              |
 
 ### github
