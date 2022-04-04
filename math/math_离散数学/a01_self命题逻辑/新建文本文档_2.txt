@@ -1,0 +1,36 @@
+01) 5个基本连接词关系整理一下
+02)
+
+
+
+要做的事情:
+01) 练习真值表(从书上找例题)
+02)
+
+
+公式类型: 重言式(永真式),矛盾式(永假式),可满足式(不是xxx,则称xxx)
+
+
+德·摩根律 德摩根律：（非常重要）长杠变短杠，开口换方向
+1. A AND B=NOT ((NOT A) OR (NOT B))
+2. A OR B=NOT ((NOT A) AND (NOT B))
+demo:
+SELECT * FROM student_01 WHERE name='李四3' AND score=80
+SELECT * FROM student_01 WHERE NOT((NOT name='李四3') OR (NOT score=80))
+
+
+
+
+
+各联结词的结合力按照如下次序递减：┐，∧，∨，→，↔
+连续的→从后往前结合
+复合命题五种联结词的结合力大小依次如下：否定，合取，析取，蕴涵，等值
+
+
+
+
+
+
+math_离散数学
+
+
