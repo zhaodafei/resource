@@ -81,6 +81,16 @@
 | [github emojis API](https://docs.github.com/en/free-pro-team@latest/rest/reference/emojis) 免费API |      |      |
 |                                                              |      |      |
 
+查看GitHub上项目创建时间,最近一次更新时间,可以使用Github提供的API,支持在线访问
+
+API格式:     https://api.github.com/repos/{:owner}/{:repository}
+
+Vue项目例子:  https://api.github.com/repos/vuejs/vue
+
+ant-design项目例子: https://api.github.com/repos/ant-design/ant-design
+
+
+
 ### 其他
 
 | [工具邦_特殊符号](http://cn.piliapp.com/symbol/) | [数学绘图计算工具 geogebra ](https://www.geogebra.org/) |      |
