@@ -41,11 +41,11 @@
 
 ### Web 单页面常用插件
 
-| xxx                                          | xxx                                              | xxx  |
-| -------------------------------------------- | ------------------------------------------------ | ---- |
-| [artDialog](http://aui.github.io/artDialog/) | [jQuery Validate](https://jqueryvalidation.org/) |      |
-|                                              |                                                  |      |
-|                                              |                                                  |      |
+| xxx                                          | xxx                                              | xxx                                                   |
+| -------------------------------------------- | ------------------------------------------------ | ----------------------------------------------------- |
+| [artDialog](http://aui.github.io/artDialog/) | [jQuery Validate](https://jqueryvalidation.org/) | [Bootstrap 官方图标库svg](https://icons.bootcss.com/) |
+|                                              |                                                  |                                                       |
+|                                              |                                                  |                                                       |
 
 
 
