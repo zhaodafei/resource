@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jquery_messageTip</title>
+  <link href="./css/style.css" type="text/css" rel="stylesheet" />
+  <script type="text/javascript" src="./jquery-1.5.2.min.js"></script>
+  <script type="text/javascript" src="./MessageTip.js?v=222"></script>
+  <script>
+    let openTip = function () {
+      MsgTip.show({
+        ico: 'information', // loading,error,information,warning,question
+        // during: 9000, // 0,1000 [默认为:2000, 0:打开不关闭, 1000:打开后1秒关闭]
+        // left: '40%', // 默认为 center
+        // top : '40%', // 默认为 center
+        msg: '&nbsp;&nbsp;正在加载页面，请稍后 ...' ,
+      });
+
+      // MsgTip.show({
+      //     msg: "打开消息窗口",
+      //     callback: function () {
+      //         window.location.reload();
+      //     }
+      // });
+    }
+    const closeTip =function () {
+      console.log("这个为啥不生效__MsgTip.hide");
+      MsgTip.hide();
+    }
+
+  </script>
+</head>
+<body>
+
+<button onclick="openTip()">打开</button>
+<button onclick="closeTip()">关闭</button>
+
+</body>
+</html>

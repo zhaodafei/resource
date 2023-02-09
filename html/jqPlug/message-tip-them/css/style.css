@@ -1,0 +1,100 @@
+.tip-left
+{
+    height: 48px;
+    background-image: url(../images/left.gif);
+    width: 5px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+.tip-middle
+{
+    height: 48px;
+    line-height: 48px;
+    background-image: url(../images/middle.gif);
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    color: gray;
+    height: 50px;
+}
+.tip-right
+{
+    height: 48px;
+    background-image: url(../images/right.gif);
+    width: 5px;
+    background-repeat: no-repeat;
+    background-position: left;
+}
+.tip-div
+{
+    height: 48px;
+    position: absolute;
+    padding:0px 0px 0px 0px;
+    outline:0px;
+    margin:0px 0px 0px 0px;
+}
+.tip-table
+{
+    border: none 0px #ffffff;
+    margin: 0px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
+    filter: progid:DXImageTransform.Microsoft.Shadow(Direction=145,OffX=2,OffY=2,enabled=true,color=#888888);
+    -moz-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.6);
+    background-color: White;
+    height: 50px;
+    font-size: 10px;
+    padding:0px 0px 0px 0px;
+    outline:0px;
+}
+.tip-table td
+{
+    height: 50px;
+    padding:0px 0px 0px 0px;
+    outline:0px;
+    margin:0px 0px 0px 0px;
+}
+.tip-warning
+{
+    background-image: url(../images/warning.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+}
+.tip-error
+{
+    background-image: url(../images/error.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 29px;
+    height: 29px;
+    vertical-align: middle;
+}
+.tip-information
+{
+    background-image: url(../images/information.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 29px;
+    height: 29px;
+    vertical-align: middle;
+}
+.tip-question
+{
+    background-image: url(../images/question.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+}
+.tip-loading
+{
+    background-image: url(../images/loading.gif);
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 32px;
+    height: 32px;
+}
+
