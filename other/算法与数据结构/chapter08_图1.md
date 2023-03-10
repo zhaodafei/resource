@@ -106,8 +106,6 @@ E: 边的有穷集合。
 
 没有了
 
-![图](./algorithm_img/alg_f_0x.png)
-
 
 
 
