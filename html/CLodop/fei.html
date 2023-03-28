@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>CLodop-测试fei</title>
+  <script language="javascript" src="./LodopFuncs.js"></script>
+</head>
+<body>
+<p>
+  <a href="javascript:prn1_preview()">打印预览</a>
+  <button onclick="prn1_preview()">打印预览</button>
+</p>
+<div style="line-height:25px">
+  <span style="background-color:#ffff99">打印预览左上角是小打印机图标，表明当前使用的是c-lodop</span><br>
+  c-lodop 基本打印功能<br>
+</div>
+<script language="javascript" type="text/javascript">
+  /**
+   * 在windows系统中获取当前文件目录位置
+   * @param newFilename 新文件名字
+   * @returns {string|string} 目录 或者 目录+文件地址
+   */
+  function getWinDir(newFilename) {
+    const pathName = window.document.location.pathname;
+    let arr = pathName.split('/')
+    let filename = arr[arr.length - 1]
+    let pos = pathName.indexOf(filename)
+    let dirName = pathName.substring(0, pos).substring(1)
+    return newFilename ? dirName + newFilename : dirName;
+  }
+
+  var LODOP; //声明为全局变量
+  function prn1_preview() {
+    // let imgUrl = 'E:/self_web/fei.jpg';
+    // let imgUrl = 'https://pic.cnblogs.com/avatar/1551357/20200522184107.png';
+    let imgUrl = getWinDir('img.jpg');
+
+
+    // 打印开始
+    LODOP = getLodop();
+    LODOP.PRINT_INIT("");
+    // 参数说明:  ADD_PRINT_TEXT(Top,Left,Width,Height,'内容xxx')
+    // 单位: 所增打印项在纸张内的上边距，整数或字符型，整数时缺省长度单位为 px。
+    //      字符型时可 包含单位名：in(英寸)、cm(厘米) 、mm(毫米) 、pt(磅)、px(1/96 英寸) 、%(百分比)，
+    //      如“10mm”表示 10 毫米
+
+    // demo01: 普通打印
+    LODOP.ADD_PRINT_TEXT('20mm', '30mm', 100, 20, "01无样式文本");
+    LODOP.ADD_PRINT_TEXT('25mm', '30mm', 120, 20, "02无样式文本aaaaa");
+    LODOP.ADD_PRINT_TEXT('30mm', '30mm', 100, 20, "03无样式文本_换行了aaaa");
+
+    // demo02: 缩放文本
+    LODOP.ADD_PRINT_TEXT('40mm', '30mm', 200, 20, "04垂直缩放1.5倍样式的纯文本");
+    LODOP.SET_PRINT_STYLEA(0, "ScalY", 1.5);//纯文本垂直缩放x
+
+    // demo3: 图片
+    LODOP.ADD_PRINT_IMAGE('50mm', '30mm', 50, 50, imgUrl);
+    LODOP.SET_PRINT_STYLEA(0, "Stretch", 2); // Stretch 的值:2--按原图长和宽比例(不变形)缩放
+
+    // demo4: 图片旋转(注意调整位置)
+    LODOP.ADD_PRINT_IMAGE('60mm', '30mm', 50, 50, imgUrl);
+    LODOP.SET_PRINT_STYLEA(0, "Stretch", 2);
+    LODOP.SET_PRINT_STYLEA(0, "Angle", 10);//图片旋转:逆时针旋转角度数,单位是度,0度表示不旋转,旋转时以对象的左上角为原点
+
+
+    // demo5: 其他样式
+    LODOP.ADD_PRINT_TEXT('80mm', '30mm', 100, 41, "大飞");
+    LODOP.SET_PRINT_STYLEA(0, "FontSize", 25);
+    LODOP.SET_PRINT_STYLEA(0, "Bold", 1);
+    // LODOP.SET_PRINT_STYLEA(0,"Alpha",155);//纯文本透明度
+
+
+    // 最后:打印预览
+    LODOP.PREVIEW(); // 打印预览
+
+  }
+</script>
+</body>

@@ -1,5 +1,5 @@
 #!bin/bash
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo "::                                                                          ::"
 echo "::      欢迎使用linux 一键编译安装php-7.0.28                                 ::"
 echo "::      如需安装其他版本,请自行修改下载地址                                  ::"
@@ -10,7 +10,7 @@ echo "::      安装过程中注意看报错信息,不同的系统缺少的包�
 echo "::                                                                          ::"
 echo "::      作者：☆赵大飞☆        QQ:1097625354                                ::"
 echo "::                                                                          ::"
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo ""
 echo "请选择你要的操作"
 echo "     1、ubuntu16 创建基础目录 /data/download /data/oneKey  /data/server /data/www"
@@ -19,16 +19,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[2] )
+	;;
+	2)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo ""
@@ -43,20 +43,20 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		sudo apt-get -y install libxml2-dev build-essential openssl libssl-dev make
 		sudo apt-get -y install url libcurl4-gnutls-dev libjpeg-dev libpng-dev libmcrypt-dev
 		sudo apt-get -y install libreadline6 libreadline6-dev libfreetype6-dev libxslt1-dev
-		;;
-	[2] )
-	    yum install -y epel-release
-	    yum -y install libxslt libxslt-devel
+	;;
+	2)
+	  yum install -y epel-release
+	  yum -y install libxslt libxslt-devel
 		yum -y install ibxml2 libxml2-devel curl-devel libjpeg-devel libpng-devel freetype-devel  libmcrypt-devel openssl openssl-devel
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo ""
@@ -67,16 +67,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		wget -P /data/download/ http://cn2.php.net/get/php-7.0.28.tar.gz/from/this/mirror
-		;;
-	[2] )
+	;;
+	2)
 	    echo "开始安装php-7.0.28"
-		;;
-	[3] )
+	;;
+	3)
 	    echo "开始安装php-7.0.28"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 
 #wget -P /data/download/ http://cn2.php.net/get/php-7.0.28.tar.gz/from/this/mirror

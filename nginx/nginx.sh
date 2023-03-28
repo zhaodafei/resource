@@ -1,6 +1,6 @@
 #!bin/bash
 
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo "::                                                                          ::"
 echo "::      欢迎使用linux 一键编译安装Nginx1.4.2                                 ::"
 echo "::      本脚本由  ☆赵大飞☆  编写，如有疑问请联系本人！                      ::"
@@ -9,7 +9,7 @@ echo "::                                                                        
 echo "::                                                                          ::"
 echo "::      作者：☆赵大飞☆        QQ:1097625354                                ::"
 echo "::                                                                          ::"
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo ""
 echo "请选择你要的操作"
 echo "     1、ubuntu16 创建基础目录 /data/download /data/oneKey  /data/server /data/www"
@@ -18,16 +18,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[2] )
+	;;
+	2)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo ""
@@ -38,16 +38,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		sudo apt-get install build-essential apt-get install libtool apt-get install g++
-		;;
-	[2] )
+	;;
+	2)
 		yum -y install gcc automake autoconf libtool make gcc gcc-c++
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 
 echo ""
@@ -59,16 +59,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		sudo apt-get install libpcre3 libpcre3-dev openssl libssl-dev zlib1g-dev
-		;;
-	[2] )
+	;;
+	2)
 		yum -y install pcre pcre-devel  openssl openssl-devel  zlib zlib-devel
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 
 wget -P /data/download/ http://nginx.org/download/nginx-1.14.1.tar.gz

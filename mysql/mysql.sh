@@ -1,5 +1,5 @@
 #!bin/bash
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo "::                                                                          ::"
 echo "::      欢迎使用linux 一键编译安装mysql5.6.39                                ::"
 echo "::      如需安装其他版本,请自行修改下载地址                                  ::"
@@ -9,7 +9,7 @@ echo "::                                                                        
 echo "::                                                                          ::"
 echo "::      作者：☆赵大飞☆        QQ:1097625354                                ::"
 echo "::                                                                          ::"
-echo "::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::"
+echo -e  "\x1B[35m  :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: \x1B[0m"
 echo ""
 echo "请选择你要的操作"
 echo "     1、ubuntu16 创建基础目录 /data/download /data/oneKey  /data/server /data/www"
@@ -18,16 +18,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[2] )
+	;;
+	2)
 		mkdir -p  /data/download /data/oneKey  /data/server /data/www
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo ""
@@ -39,16 +39,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		sudo apt -y install make cmake gcc g++ perl bison libaio-dev libncurses5 libncurses5-dev libnuma-dev
-		;;
-	[2] )
+	;;
+	2)
         yum -y install gcc gcc-c++ cmake ncurses-devel autoconf perl perl-devel
-		;;
-	[3] )
+	;;
+	3)
 		echo "跳过"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo ""
@@ -59,16 +59,16 @@ echo "     3、跳过"
 echo ""
 read num
 case "$num" in
-	[1] )
+	1)
 		wget -P /data/download/ https://dev.mysql.com/get/Downloads/MySQL-5.6/mysql-5.6.39.tar.gz
-		;;
-	[2] )
+	;;
+	2)
 	    echo "开始安装mysql-5.6.39"
-		;;
-	[3] )
+	;;
+	3)
 	    echo "开始安装mysql-5.6.39"
-		;;
-		*) echo "选择错误，退出";;
+	;;
+	*) echo "选择错误，退出";;
 esac
 echo ""
 echo " 创建mysql用户"
