@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <style> body {padding: 0; margin: 0;} </style>
+  <script src="./libs/p5.js"></script>
+</head>
+<body>
+<!--
+https://blog.csdn.net/qq_26906345/article/details/78863602
+https://blog.csdn.net/qq_26906345/article/details/78863602
+https://blog.csdn.net/qq_26906345/article/details/78863602
+
+初代级版 (直线 )
+-->
+
+<script>
+  var data=[];//点坐标
+  var a=1;//拟合直线的x系数
+  var b=0;//拟合直线的常熟b
+  /**
+   * 初始函数
+   */
+  function setup() {//p5.js的初始方法
+    createCanvas(400,400);
+    background(0,3,3);
+  }
+  /**
+   * 一次函数线性回归（系数项和常数项）
+   */
+  function linearRegression(){
+    var xsum=0;//x的多项和
+    var ysum=0;//y的多项和
+    for(var i=0;i<data.length;i++){
+      xsum+=data[i].x;
+      ysum+=data[i].y;
+    }
+    var xmean=xsum/data.length;//x的平均数
+    var ymean=ysum/data.length;//y的平均数
+    var num=0;//多项式和【(x-x的均值)*(y-y的均值)】
+    var den=0;//多项式和【(x-x的均值)*(x-x的均值)】
+    for(var i=0;i<data.length;i++){
+      var x=data[i].x;
+      var y=data[i].y;
+      num+=(x-xmean)*(y-ymean);
+      den+=(x-xmean)*(x-xmean);
+    }
+    a=num/den;//y=ax+b 的 系数a
+    b=ymean-a*xmean;//y=ax+b 的 系数b
+  }
+  /**
+   * 鼠标点击
+   */
+  function mousePressed(){
+    var x=map(mouseX,0,width,0,100);
+    var y=map(mouseY,0,height,100,0);
+    var point = createVector(x,y);
+    data.push(point);
+  }
+  /**
+   * 画直线
+   */
+  function drawLine(){
+    var x1=0;//得到(x1,y1),(x2,y2)，即可画直线
+    var x2=100;
+    var y1=a*x1+b;
+    var y2=a*x2+b;
+    x1=map(x1,0,100,0,width);
+    x2=map(x2,0,100,0,width);
+    y1=map(y1,0,100,height,0);
+    y2=map(y2,0,100,height,0);
+    stroke(255);
+    line(x1,y1,x2,y2);
+  }
+  /**
+   * 绘画（点和线）
+   */
+  function draw() {
+    background(50);
+    for(var i=0;i<data.length;i++){
+      var x=map(data[i].x,0,100,0,width);
+      var y=map(data[i].y,0,100,height,0);
+      fill(255,0,0);//设置填充颜色
+      stroke(255);//设置边框颜色
+      strokeWeight(2);//设置点的宽度
+      ellipse(x,y,10,10);//椭圆
+    }
+    if(data.length>1){
+      linearRegression();
+      drawLine();
+    }
+  }
+
+</script>
+</body>
+</html>
