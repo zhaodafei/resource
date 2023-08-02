@@ -15,7 +15,7 @@
 | [启动盘制作 Rufus](https://rufus.ie/)                        | [realvnc 连接linux图形桌面](https://www.realvnc.com/en/connect/download/viewer/) | [crx4chrome chrome 插件下载](<https://www.crx4chrome.com/>)  |
 | [鸠摩搜索](https://www.jiumodiary.com/)                      | scp && [expect-nt](https://github.com/an7oine/expect-nt/tree/master/original-5.21r1b1 "expect-nt") | faststone capture [ 一款截图软件 ]                           |
 | [SQL省市区数据](https://github.com/xiangyuecn/AreaCity-JsSpider-StatsGov/releases) | [Everything 搜索功能软件](<https://www.voidtools.com/zh-cn/>) | Snipast [ 一款截图软件]                                      |
-|                                                              |                                                              |                                                              |
+| [MobaXterm 一款shell工具](https://mobaxterm.mobatek.net/)    |                                                              |                                                              |
 
 
 
@@ -108,6 +108,11 @@ ant-design项目例子: https://api.github.com/repos/ant-design/ant-design
    https://gitee.com/y_project/RuoYi-Vue 
    ```
 
-   
+2. 灯灯
+   ```html
+   https://tangyh.top/
+   https://github.com/dromara/lamp-cloud
+   https://www.kancloud.cn/zuihou/zuihou-admin-cloud/2003631
+   ```
 
-2. xx
+2. xxx
