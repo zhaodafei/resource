@@ -47,7 +47,15 @@
 |                                              |                                                  |                                                       |
 |                                              |                                                  |                                                       |
 
+### 图标icon
 
+```wiki
+01) https://icones.js.org/collection/ep
+02) https://icon-sets.iconify.design/ep/
+```
+
+- [Icônes](https://icones.js.org/collection/ep)
+- [Iconify](https://icon-sets.iconify.design/ep/)
 
 ### PHP
 
