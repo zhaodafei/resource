@@ -67,11 +67,11 @@
 
 ### 其他工具
 
-| XXX                                                          | XXX  | XXX  |
-| ------------------------------------------------------------ | ---- | ---- |
-| [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via) |      |      |
-| [一款懂你的手机电子书 阅读](https://www.coolapk.com/apk/com.gedoor.monkeybook) |      |      |
-| [在线文档转换工具aconvert](https://www.aconvert.com/cn/document/) |      |      |
+| XXX                                                          | XXX                                                         | XXX  |
+| ------------------------------------------------------------ | ----------------------------------------------------------- | ---- |
+| [一款懂你的手机浏览器 via](https://coolapk.com/apk/mark.via) | [yed-live 流程图和icon图](https://www.yworks.com/yed-live/) |      |
+| [一款懂你的手机电子书 阅读](https://www.coolapk.com/apk/com.gedoor.monkeybook) |                                                             |      |
+| [在线文档转换工具aconvert](https://www.aconvert.com/cn/document/) |                                                             |      |
 
 ### JAVA
 
@@ -132,4 +132,18 @@ ant-design项目例子: https://api.github.com/repos/ant-design/ant-design
 
    
 
-2. xxx
+4. xxx
+
+
+
+### 其他关键词
+
+1. opencv图像卷积
+2. YOLO4强大的物体识别
+3. xxx
+
+### 学术网站
+
+1. [中国计算机学会 CCF](https://www.ccf.org.cn/)
+2. [计算机学报](http://cjc.ict.ac.cn/)
+3. 
