@@ -154,7 +154,61 @@ She made a request that the doctor(should) be sent for at once.
 
 ```
 
+### 常见记忆技巧
 
+#### 第一组
+
+1. used to do
+
+   > used to do 和 be used to doing
+   >
+   > 口诀: 过去常常,掐头去尾;  现在习惯,有始有终
+   >
+   > used to do: 过去常常做某事
+   >
+   > be used to doing: 现在习惯习惯做某事
+   >
+   > ```wiki
+   > #demo
+   > He used to go for a walk in the morning,but now he is used to playing basketball.
+   > #他过去早上常常去散步，但是现在他习惯打篮球。
+   > 
+   > I used to get up late,but now I am used to getting up early.
+   > #我过去常常起得很晚，但是现在我习惯于早起。
+   > ```
+   >
+   > 
+
+2. xxx
+
+3. xxx
+
+4. xxx
+
+5. xxx
+
+6. xxx
+
+7. xxx
+
+8. xxx
+
+9. xxx
+
+10. xxx
+
+#### 第二组
+
+1. xxxx
+2. xxx
+3. xxx
+4. xxx
+5. xxx
+6. xxx
+7. xxx
+8. xxx
+9. xxx
+10. xxx
 
 ### 底部
 

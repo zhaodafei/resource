@@ -36,7 +36,7 @@
 | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [中国 / 省市区 / 三级联动 / 地址选择器](https://github.com/fengyuanchen/distpicker) | [Element](https://element.eleme.cn/#/zh-CN/component/installation) | [Bootstrap](https://www.bootcss.com/)                        |
 | [Iconfont-阿里巴巴矢量图标库](https://www.iconfont.cn/)      | [WebUploader API 前端上传文件](http://fex.baidu.com/webuploader/doc/index.html) | [mocky 免费API](https://designer.mocky.io/design/confirmation) |
-| [flatuicolors 颜色](https://flatuicolors.com/)               |                                                              |                                                              |
+| [flatuicolors 颜色](https://flatuicolors.com/)               | [lodash一个js实用工具库](https://www.lodashjs.com/)          |                                                              |
 |                                                              |                                                              |                                                              |
 
 ### Web 单页面常用插件
