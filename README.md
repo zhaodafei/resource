@@ -114,23 +114,39 @@ ant-design项目例子: https://api.github.com/repos/ant-design/ant-design
    RuoYi 若依Vue3版本,前后端仓库位置
    https://github.com/yangzongzhuan/RuoYi-Vue3
    https://gitee.com/y_project/RuoYi-Vue 
+   
+   版本说明: https://doc.ruoyi.vip/ruoyi-cloud/
+   https://gitcode.com/yangzongzhuan/RuoYi-Cloud-Vue3
+   
    ```
-
+   
 2. 灯灯
-   ```html
+   ```wiki
    https://tangyh.top/
    https://github.com/dromara/lamp-cloud
    https://www.kancloud.cn/zuihou/zuihou-admin-cloud/2003631
    ```
 
 3. BladeX
-   ```wi
+   ```wiki
    https://bladex.cn/#/
    https://gitee.com/smallc/Saber.git
    
    ```
 
+4. 小诺`Snowy`
+
+   ```wiki
+   #这里面包含前后端代码
+   #采用SpringBoot+MybatisPlus+AntDesignVue+Vite
+   https://gitee.com/xiaonuobase/snowy.git
+   ```
+
    
+
+5. xxx
+
+6. xxx
 
 4. xxx
 
